@@ -1,12 +1,9 @@
 using Godot;
 using System;
-using SimpleInjector;
 using static Godot.GD;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Fractural.Tasks;
 
 namespace FarewellToFate;
 
