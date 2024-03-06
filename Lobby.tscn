@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtydc8vjhwbjx"]
+
+[ext_resource type="Script" path="res://Scripts/Lobby.cs" id="1_n8p6r"]
+
+[node name="LobbyView" type="Node"]
+script = ExtResource("1_n8p6r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.5
+offset_top = 220.0
+offset_right = 317.5
+offset_bottom = 251.0
+grow_horizontal = 2
+
+[node name="NameLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="IpAddressLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "localhost"
+placeholder_text = "Ip Address"
+
+[node name="MessageLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter your message here..."
