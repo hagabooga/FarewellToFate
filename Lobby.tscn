@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtydc8vjhwbjx"]
+[gd_scene load_steps=3 format=3 uid="uid://dtydc8vjhwbjx"]
 
 [ext_resource type="Script" path="res://Scripts/Lobby.cs" id="1_n8p6r"]
+[ext_resource type="PackedScene" uid="uid://p2opiokvrwwk" path="res://Player.tscn" id="2_iudpi"]
 
 [node name="LobbyView" type="Node"]
 script = ExtResource("1_n8p6r")
+playerPs = ExtResource("2_iudpi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,9 +35,36 @@ placeholder_text = "Name"
 
 [node name="IpAddressLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-text = "localhost"
+text = "127.0.0.1"
 placeholder_text = "Ip Address"
 
 [node name="MessageLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Enter your message here..."
+
+[node name="DebugLineEdit1" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="DebugLineEdit2" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="DebugLineEdit3" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="CreateServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Create Server"
+
+[node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Join Server"
+
+[node name="Players" type="Node" parent="."]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 10

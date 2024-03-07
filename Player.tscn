@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://p2opiokvrwwk"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_ovdyp"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bnthh"]
+properties/0/path = NodePath(".:Username")
+properties/0/spawn = true
+properties/0/replication_mode = 0
+
+[node name="Player" type="Node"]
+script = ExtResource("1_ovdyp")
+
+[node name="StatsSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_bnthh")
