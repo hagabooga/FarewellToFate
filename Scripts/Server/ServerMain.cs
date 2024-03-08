@@ -2,12 +2,6 @@ using Godot;
 
 namespace FarewellToFate.Server;
 
-
-public partial class PlayersModel : Node
-{
-
-}
-
 public partial class ServerMain : AbstractMain
 {
     public override void _Ready()
@@ -17,10 +11,14 @@ public partial class ServerMain : AbstractMain
         Engine.MaxFps = 200;
 
         RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
+        RegisterSingleton<Players>();
 
 
         container.Verify();
 
-        typesRegisteredAsNode.ForEach(AddRegisteredNodes);
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            typesRegisteredAsNode.ForEach(AddRegisteredNodes);
+        });
     }
 }

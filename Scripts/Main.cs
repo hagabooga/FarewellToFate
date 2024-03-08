@@ -9,7 +9,7 @@ public partial class Main : AbstractMain
 
     [ExplicitChild] public LobbyView LobbyView { get; }
 
-    public override async void _Ready()
+    public override void _Ready()
     {
         base._Ready();
 
@@ -21,7 +21,10 @@ public partial class Main : AbstractMain
         container.Verify();
 
 
-        typesRegisteredAsNode.ForEach(AddRegisteredNodes);
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            typesRegisteredAsNode.ForEach(AddRegisteredNodes);
+        });
     }
 
 }

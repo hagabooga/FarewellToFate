@@ -21,8 +21,6 @@ public partial class LobbyView : ExplicitNode
 
     [Export] public Dictionary<long, Player> IdToPlayer { get; private set; } = [];
 
-    [Export] public Array<string> Messages { get; private set; } = [];
-
     public override void _Ready()
     {
         base._Ready();

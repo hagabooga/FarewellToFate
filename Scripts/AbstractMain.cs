@@ -42,7 +42,7 @@ public abstract partial class AbstractMain : ExplicitNode
     {
         var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(type);
         var node = (Node)genericMethod.Invoke(container, []);
-        AddChild(node, true);
+        GetTree().Root.AddChild(node, true);
         node.Name = type.Name;
     }
 }
