@@ -2,40 +2,17 @@ using Godot;
 using System;
 using static Godot.GD;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 
 namespace FarewellToFate;
+
 
 public partial class Main : ExplicitNode
 {
     [Export] PackedScene lobbyPs;
 
-    static MethodInfo RegisterSingleton1Type0Args { get; } = typeof(SimpleInjector.Container)
-        .GetMethods()
-        .Single(x => x.IsGenericMethod
-                    && x.Name == "RegisterSingleton"
-                    && x.GetParameters().Length == 0
-                    && x.GetGenericArguments().Length == 1);
-
-    static MethodInfo RegisterInstance1Type1Args { get; } = typeof(SimpleInjector.Container)
-        .GetMethods()
-        .Single(x => x.IsGenericMethod
-                     && x.Name == "RegisterInstance"
-                     && x.GetParameters().Length == 1
-                     && x.GetGenericArguments().Length == 1);
-
-
-    static MethodInfo GetInstance1Type0Args { get; } = typeof(SimpleInjector.Container)
-        .GetMethods()
-        .Single(x => x.IsGenericMethod
-                    && x.Name == "GetInstance"
-                    && x.GetParameters().Length == 0
-                    && x.GetGenericArguments().Length == 1);
 
     readonly SimpleInjector.Container container = new();
     readonly List<Type> typesRegisteredAsNode = [];
-
 
     public override void _Ready()
     {
@@ -55,7 +32,7 @@ public partial class Main : ExplicitNode
     {
         Node node = ps.Instantiate<T>();
         Type type = typeof(T);
-        var genericMethod = RegisterInstance1Type1Args.MakeGenericMethod(type);
+        var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
         genericMethod.Invoke(container, [node]);
         AddChild(node);
         node.Name = type.Name;
@@ -64,17 +41,16 @@ public partial class Main : ExplicitNode
     void Register<T>() where T : Node
     {
         var type = typeof(T);
-        var genericMethod = RegisterSingleton1Type0Args.MakeGenericMethod(type);
+        var genericMethod = SimpleInjectorUtility.RegisterSingleton1Type0Args.MakeGenericMethod(type);
         genericMethod.Invoke(container, []);
         typesRegisteredAsNode.Add(type);
     }
 
     void AddRegisteredNodes(Type type)
     {
-        var genericMethod = GetInstance1Type0Args.MakeGenericMethod(type);
+        var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(type);
         var node = (Node)genericMethod.Invoke(container, []);
         AddChild(node);
         node.Name = type.Name;
     }
-
 }
