@@ -1,34 +1,32 @@
 using Godot;
-using System;
-
+using static Godot.GD;
 namespace FarewellToFate;
 
 public partial class Player : ExplicitNode
 {
-	[Export] long id;
-
-	[Explicit] public MultiplayerSynchronizer StatsSynchronizer { get; }
-
+	private long id;
+	private string username;
+	[Export]
 	public long Id
 	{
-		get => id;
-		set
+		get => id; set
 		{
+			Print($"{Multiplayer?.GetUniqueId()}: Setting Id to " + value);
 			id = value;
-			StatsSynchronizer.SetMultiplayerAuthority((int)value);
-			StatsSynchronizer.SetProcess(StatsSynchronizer.GetMultiplayerAuthority() == StatsSynchronizer.Multiplayer.GetUniqueId());
+		}
+	}
+	[Export]
+	public string Username
+	{
+		get => username; set
+		{
+			Print($"{Multiplayer?.GetUniqueId()}: Setting Username to " + value);
+			username = value;
 		}
 	}
 
-	[Export] public string Username { get; set; }
-
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		base._Ready();
 	}
 }

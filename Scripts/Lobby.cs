@@ -8,16 +8,17 @@ public partial class Lobby : ExplicitNode
 {
     [Export] PackedScene playerPs;
 
-    [Explicit] public LineEdit NameLineEdit { get; }
-    [Explicit] public LineEdit IpAddressLineEdit { get; }
-    [Explicit] public LineEdit MessageLineEdit { get; }
-    [Explicit] public LineEdit DebugLineEdit1 { get; }
-    [Explicit] public LineEdit DebugLineEdit2 { get; }
-    [Explicit] public LineEdit DebugLineEdit3 { get; }
-    [Explicit] public Button CreateServerButton { get; }
-    [Explicit] public Button JoinServerButton { get; }
-    [Explicit] public MultiplayerSpawner PlayerSpawner { get; }
-    [Explicit] public Node Players { get; }
+    [ExplicitChild] public LineEdit NameLineEdit { get; }
+    [ExplicitChild] public LineEdit IpAddressLineEdit { get; }
+    [ExplicitChild] public LineEdit MessageLineEdit { get; }
+    [ExplicitChild] public LineEdit DebugLineEdit1 { get; }
+    [ExplicitChild] public LineEdit DebugLineEdit2 { get; }
+    [ExplicitChild] public LineEdit DebugLineEdit3 { get; }
+    [ExplicitChild] public Button CreateServerButton { get; }
+    [ExplicitChild] public Button JoinServerButton { get; }
+    [ExplicitChild] public Node Players { get; }
+
+    readonly Dictionary<long, Player> idToPlayer = [];
 
     public override void _Ready()
     {
@@ -30,67 +31,37 @@ public partial class Lobby : ExplicitNode
 
         CreateServerButton.Pressed += () =>
         {
-            ENetMultiplayerPeer peer = new();
-            peer.CreateServer(6969);
-            if (peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
+            DebugLineEdit1.Text = DebugLineEdit1.Name = "Server";
+            Multiplayer.MultiplayerPeer = new Server();
+            Multiplayer.MultiplayerPeer.PeerConnected += id =>
             {
-                OS.Alert("Failed to start multiplayer server.");
-                return;
-            }
-            Print("Started server.");
-            List<long> connectedIds = [];
-            List<string> messages = new(10);
-            Multiplayer.MultiplayerPeer = peer;
-            peer.PeerConnected += id =>
-            {
-                connectedIds.Add(id);
-                Print("Client connected to server: " + id);
-                DebugLineEdit1.Text = $"[{string.Join(", ", connectedIds)}]";
                 var player = playerPs.Instantiate<Player>();
-
-                Players.AddChild(player);
-
-
-                GDTask.Create(async () =>
-                {
-                    await GDTask.Yield();
-                    player.Id = id;
-                    player.Username = NameLineEdit.Text;
-                });
-
+                Players.AddChild(player, true);
+                player.Name = id.ToString();
+                player.Id = id;
+                idToPlayer[id] = player;
             };
-            peer.PeerDisconnected += id =>
-            {
-                connectedIds.Remove(id);
-                Print("Client disconnected from server: " + id);
-                DebugLineEdit1.Text = $"[{connectedIds.Join(", ")}]";
-            };
-
         };
 
         JoinServerButton.Pressed += () =>
         {
-            ENetMultiplayerPeer peer = new();
-            peer.CreateClient(IpAddressLineEdit.Text, 6969);
-            if (peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
+            DebugLineEdit1.Text = DebugLineEdit1.Name = "Client";
+            Multiplayer.MultiplayerPeer = new Client();
+            Multiplayer.MultiplayerPeer.PeerConnected += id =>
             {
-                OS.Alert("Failed to start multiplayer client.");
-                return;
-            }
-            Multiplayer.MultiplayerPeer = peer;
-            peer.PeerConnected += id =>
-            {
-                Print("Connected to server: " + id);
+                GDTask.Create(async () =>
+                {
+                    await GDTask.Yield();
+                    RpcId(1, nameof(ReceiveUsername), NameLineEdit.Text);
+                }).Forget();
             };
         };
-
     }
 
-
-    // public override void _Process(double delta)
-    // {
-    //     MultiplayerSynchronizer
-    // }
-
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void ReceiveUsername(string username)
+    {
+        idToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
+    }
 }
 

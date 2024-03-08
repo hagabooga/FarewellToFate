@@ -1,63 +1,22 @@
-// using Godot;
-// using static Godot.GD;
-// using Godot.Collections;
+using Godot;
+using static Godot.GD;
 
-// using FarewellToFate;
+namespace FarewellToFate;
 
-// public partial class Client : Node
-// {
-// 	public string IpAddress { get; set; } = "localhost";
+public partial class Client : ENetMultiplayerPeer
+{
+    public Client()
+    {
+        CreateClient("127.0.0.1", 6969);
 
-// 	ENetMultiplayerPeer peer = new();
+        PeerConnected += id =>
+        {
+            Print("Client connected to server: " + id);
+        };
 
-// 	public override void _Ready()
-// 	{
-// 		peer.CreateClient(IpAddress, Constants.Port);
-// 		Multiplayer.MultiplayerPeer = peer;
-// 	}
-
-// 	// public event System.Action<MultiplayerPeer.ConnectionStatus> ConnectionUpdated;
-// 	// public string ServerAddress { get; init; } = "localhost";
-// 	// ENetMultiplayerPeer MultiplayerPeer { get; } = new();
-// 	// Array connectedPeerIds = new();
-
-// 	// public override void _Ready()
-// 	// {
-// 	// 	Multiplayer.ServerDisconnected += () =>
-// 	// 	{
-// 	// 		MultiplayerPeer.Close();
-// 	// 		ConnectionUpdate();
-// 	// 		Print("Disconnected from server.");
-// 	// 	};
-// 	// }
-
-// 	// [Rpc()]
-// 	// public void SyncPlayerList(Array updatedConnectedPeerIds)
-// 	// {
-// 	// 	connectedPeerIds = updatedConnectedPeerIds;
-// 	// 	Print(MultiplayerPeer.GetUniqueId());
-// 	// }
-
-// 	// public void Connect()
-// 	// {
-// 	// 	Print("Connecting...");
-// 	// 	MultiplayerPeer.CreateClient(ServerAddress, Constants.Port);
-// 	// 	Multiplayer.MultiplayerPeer = MultiplayerPeer;
-// 	// 	ConnectionUpdate();
-// 	// }
-
-// 	// public void Disconnect()
-// 	// {
-// 	// 	MultiplayerPeer.Close();
-// 	// 	ConnectionUpdate();
-// 	// 	Print("Disconnected.");
-// 	// }
-
-
-// 	// private void ConnectionUpdate()
-// 	// {
-// 	// 	ConnectionUpdated?.Invoke(MultiplayerPeer.GetConnectionStatus());
-// 	// }
-
-
-// }
+        PeerDisconnected += id =>
+        {
+            Print("Client disconnected from server: " + id);
+        };
+    }
+}

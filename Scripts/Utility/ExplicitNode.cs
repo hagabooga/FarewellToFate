@@ -22,7 +22,7 @@ public abstract partial class ExplicitNode : Node
     static Func<PropertyInfo, bool> IsPropertyExplicit { get; } =
         property => property.GetMethod is not null
                     && property.SetMethod is null
-                    && property.GetCustomAttribute<Explicit>() is not null;
+                    && property.GetCustomAttribute<ExplicitChild>() is not null;
 
     public override void _Ready()
     {

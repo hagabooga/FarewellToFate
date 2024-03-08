@@ -1,15 +1,22 @@
-// using Godot;
-// using Godot.Collections;
-// using static Godot.GD;
+using Godot;
+using static Godot.GD;
 
-// namespace FarewellToFate;
-// public partial class Server : Node
-// {
-//     ENetMultiplayerPeer peer = new();
+namespace FarewellToFate;
 
-//     public override void _Ready()
-//     {
-//         peer.CreateServer(Constants.Port, Constants.MaxClients);
-//         Multiplayer.MultiplayerPeer = peer;
-//     }
-// }
+public partial class Server : ENetMultiplayerPeer
+{
+    public Server()
+    {
+        CreateServer(6969);
+
+        PeerConnected += id =>
+        {
+            Print("Server - Client connected to server: " + id);
+        };
+
+        PeerDisconnected += id =>
+        {
+            Print("Server - Client disconnected from server: " + id);
+        };
+    }
+}

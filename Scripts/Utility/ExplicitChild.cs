@@ -3,7 +3,7 @@ using System;
 namespace FarewellToFate;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class Explicit : Attribute
+public class ExplicitChild : Attribute
 {
 
 }

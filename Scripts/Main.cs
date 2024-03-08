@@ -34,7 +34,7 @@ public partial class Main : ExplicitNode
                     && x.GetGenericArguments().Length == 1);
 
     readonly SimpleInjector.Container container = new();
-    readonly List<Type> typesRegisteredAsNode = new();
+    readonly List<Type> typesRegisteredAsNode = [];
 
 
     public override void _Ready()
@@ -42,7 +42,6 @@ public partial class Main : ExplicitNode
         base._Ready();
 
         Engine.MaxFps = 200;
-
 
         Register<HotkeyInputs>();
         RegisterPackedScene<Lobby>(lobbyPs);
@@ -57,7 +56,7 @@ public partial class Main : ExplicitNode
         Node node = ps.Instantiate<T>();
         Type type = typeof(T);
         var genericMethod = RegisterInstance1Type1Args.MakeGenericMethod(type);
-        genericMethod.Invoke(container, new object[] { node });
+        genericMethod.Invoke(container, [node]);
         AddChild(node);
         node.Name = type.Name;
     }
@@ -66,14 +65,14 @@ public partial class Main : ExplicitNode
     {
         var type = typeof(T);
         var genericMethod = RegisterSingleton1Type0Args.MakeGenericMethod(type);
-        genericMethod.Invoke(container, Array.Empty<object>());
+        genericMethod.Invoke(container, []);
         typesRegisteredAsNode.Add(type);
     }
 
     void AddRegisteredNodes(Type type)
     {
         var genericMethod = GetInstance1Type0Args.MakeGenericMethod(type);
-        var node = (Node)genericMethod.Invoke(container, Array.Empty<object>());
+        var node = (Node)genericMethod.Invoke(container, []);
         AddChild(node);
         node.Name = type.Name;
     }
