@@ -1,12 +1,13 @@
-using System.Collections.Generic;
 using Godot;
 using static Godot.GD;
 using Fractural.Tasks;
+using System;
+using Godot.Collections;
 namespace FarewellToFate;
 
-public partial class Lobby : ExplicitNode
+public partial class LobbyView : ExplicitNode
 {
-    [Export] PackedScene playerPs;
+    [Export] PackedScene playerPs, serverPs, clientPs;
 
     [ExplicitChild] public LineEdit NameLineEdit { get; }
     [ExplicitChild] public LineEdit IpAddressLineEdit { get; }
@@ -18,7 +19,9 @@ public partial class Lobby : ExplicitNode
     [ExplicitChild] public Button JoinServerButton { get; }
     [ExplicitChild] public Node Players { get; }
 
-    readonly Dictionary<long, Player> idToPlayer = [];
+    [Export] public Dictionary<long, Player> IdToPlayer { get; private set; } = [];
+
+    [Export] public Array<string> Messages { get; private set; } = [];
 
     public override void _Ready()
     {
@@ -32,21 +35,21 @@ public partial class Lobby : ExplicitNode
         CreateServerButton.Pressed += () =>
         {
             DebugLineEdit1.Text = DebugLineEdit1.Name = "Server";
-            Multiplayer.MultiplayerPeer = new Server();
+            Multiplayer.MultiplayerPeer = new OLdServer();
             Multiplayer.MultiplayerPeer.PeerConnected += id =>
             {
                 var player = playerPs.Instantiate<Player>();
-                Players.AddChild(player, true);
                 player.Name = id.ToString();
+                Players.AddChild(player, true);
                 player.Id = id;
-                idToPlayer[id] = player;
+                IdToPlayer[id] = player;
             };
         };
 
         JoinServerButton.Pressed += () =>
         {
             DebugLineEdit1.Text = DebugLineEdit1.Name = "Client";
-            Multiplayer.MultiplayerPeer = new Client();
+            Multiplayer.MultiplayerPeer = new ClientOld();
             Multiplayer.MultiplayerPeer.PeerConnected += id =>
             {
                 GDTask.Create(async () =>
@@ -61,7 +64,14 @@ public partial class Lobby : ExplicitNode
     [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
     public void ReceiveUsername(string username)
     {
-        idToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
+        IdToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
     }
+
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void SendChatMessage(string text)
+    {
+        throw new NotImplementedException();
+    }
+
 }
 

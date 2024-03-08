@@ -6,3 +6,5 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_lfivv")
 lobbyPs = ExtResource("2_km6gn")
+
+[node name="LobbyView" parent="." instance=ExtResource("2_km6gn")]

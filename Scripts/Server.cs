@@ -3,9 +3,9 @@ using static Godot.GD;
 
 namespace FarewellToFate;
 
-public partial class Server : ENetMultiplayerPeer
+public partial class OLdServer : ENetMultiplayerPeer
 {
-    public Server()
+    public OLdServer()
     {
         CreateServer(6969);
 

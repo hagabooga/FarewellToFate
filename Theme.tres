@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cpjvfi6lb87hv"]
+
+[ext_resource type="FontFile" uid="uid://c8uidwn7agn1e" path="res://segoeuil.ttf" id="1_vbplo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwbsa"]
+
+[resource]
+default_font = ExtResource("1_vbplo")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/styles/normal = SubResource("StyleBoxEmpty_gwbsa")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cloonhtcytybe"]
+
+[ext_resource type="Script" path="res://Scripts/Client/ChatBox.cs" id="1_ac4ov"]
+[ext_resource type="Theme" uid="uid://cpjvfi6lb87hv" path="res://Theme.tres" id="2_thr7g"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tv3bj"]
+properties/0/path = NodePath(".:messages")
+properties/0/spawn = false
+properties/0/replication_mode = 2
+
+[node name="ChatBox" type="Node"]
+script = ExtResource("1_ac4ov")
+messages = null
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tv3bj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_thr7g")
+
+[node name="TextEdit" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -405.0
+offset_right = 805.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextEdit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessagesLabel" type="Label" parent="CanvasLayer/Control/TextEdit/VBoxContainer"]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "Testing"
+
+[node name="MessageLineEdit" type="LineEdit" parent="CanvasLayer/Control/TextEdit/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Type a message here..."

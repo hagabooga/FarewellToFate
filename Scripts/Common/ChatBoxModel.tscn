@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dllr1dvux7ic5"]
+
+[ext_resource type="Script" path="res://Scripts/Common/ChatBoxModel.cs" id="1_mfmmx"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_r608l"]
+properties/0/path = NodePath(".:Messages")
+properties/0/spawn = false
+properties/0/replication_mode = 2
+
+[node name="ChatBoxModel" type="Node"]
+script = ExtResource("1_mfmmx")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_r608l")
