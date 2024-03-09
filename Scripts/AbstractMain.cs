@@ -1,7 +1,8 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
+using static Godot.GD;
 namespace FarewellToFate;
 
 public abstract partial class AbstractMain : ExplicitNode
@@ -14,13 +15,12 @@ public abstract partial class AbstractMain : ExplicitNode
         base._Ready();
     }
 
-
-    protected void RegisterPackedSceneInstantiation<T>(string path) where T : Node
+    protected void RegisterPackedSceneInstantiation<T>(string path) where T : class
     {
-        RegisterPackedSceneInstantiation<T>(GD.Load<PackedScene>(path));
+        RegisterPackedSceneInstantiation<T>(Load<PackedScene>(path));
     }
 
-    protected void RegisterPackedSceneInstantiation<T>(PackedScene ps) where T : Node
+    protected void RegisterPackedSceneInstantiation<T>(PackedScene ps) where T : class
     {
         var type = typeof(T);
         T node = ps.Instantiate<T>();
@@ -28,7 +28,7 @@ public abstract partial class AbstractMain : ExplicitNode
         typesRegisteredAsNode.Add(type);
     }
 
-    protected void RegisterSingleton<T>() where T : Node
+    protected void RegisterSingleton<T>() where T : class
     {
         var type = typeof(T);
         var genericMethod = SimpleInjectorUtility.RegisterSingleton1Type0Args.MakeGenericMethod(type);
@@ -44,11 +44,11 @@ public abstract partial class AbstractMain : ExplicitNode
         node.Name = type.Name;
     }
 
-    protected void RegisterNodeInstance<T>(T node) where T : Node
+    protected void RegisterNodeInstance<T>(T node) where T : class
     {
+        Print(node.GetType().Name);
         var type = typeof(T);
         var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
         genericMethod.Invoke(container, [node]);
-        node.Name = type.Name;
     }
 }

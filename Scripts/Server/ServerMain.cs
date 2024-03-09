@@ -1,5 +1,5 @@
 using Godot;
-
+using static Godot.GD;
 namespace FarewellToFate.Server;
 
 public partial class ServerMain : AbstractMain
@@ -22,5 +22,20 @@ public partial class ServerMain : AbstractMain
         {
             typesRegisteredAsNode.ForEach(AddRegisteredNodes);
         });
+
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            typesRegisteredAsNode.ForEach(x =>
+            {
+                if (x.GetType().IsAssignableFrom(typeof(IAsyncStartable)))
+                {
+                    Print(x.GetType().Name);
+                    var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(x);
+                    var node = (IAsyncStartable)genericMethod.Invoke(container, []);
+                    node.StartAsync();
+                }
+            });
+        });
+
     }
 }

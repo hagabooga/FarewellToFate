@@ -1,5 +1,5 @@
 using Godot;
-
+using static Godot.GD;
 namespace FarewellToFate;
 
 public partial class LoginView : ExplicitNode, ILoginView
@@ -12,9 +12,10 @@ public partial class LoginView : ExplicitNode, ILoginView
         remove => UsernameLineEdit.TextSubmitted -= value;
     }
 
-    public override void _Ready()
+    public LoginView()
     {
-        base._Ready();
+        Print("LoginView constructor");
     }
+
 
 }

@@ -19,8 +19,6 @@ public partial class LobbyView : ExplicitNode
     [ExplicitChild] public Button JoinServerButton { get; }
     [ExplicitChild] public Node Players { get; }
 
-    [Export] public Dictionary<long, Player> IdToPlayer { get; private set; } = [];
-
     public override void _Ready()
     {
         base._Ready();

@@ -18,6 +18,7 @@ public partial class ClientMain : AbstractMain
 
 
         RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
+        RegisterPackedSceneInstantiation<ILoginView>("res://Scripts/Client/LoginView.tscn");
 
 
         container.Verify();

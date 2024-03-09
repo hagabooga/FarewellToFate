@@ -24,6 +24,7 @@ public abstract partial class ExplicitNode : Node
                     && property.SetMethod is null
                     && property.GetCustomAttribute<ExplicitChild>() is not null;
 
+
     public override void _Ready()
     {
         var type = GetType();

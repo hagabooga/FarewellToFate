@@ -13,13 +13,24 @@ public partial class PlayerInformation(ENetServer server) : Node
     {
         base._Ready();
 
+        Node node = new()
+        {
+            Name = "Players"
+        };
+        AddChild(node);
+
+        MultiplayerSpawner multiplayerSpawner = new();
+        AddChild(multiplayerSpawner);
+        multiplayerSpawner.SpawnPath = "../Players";
+        multiplayerSpawner.AddSpawnableScene("res://Player.tscn");
+
         playerPs = GD.Load<PackedScene>("res://Player.tscn");
 
         server.PeerConnected += id =>
         {
             var player = playerPs.Instantiate<Player>();
             player.Name = id.ToString();
-            AddChild(player, true);
+            node.AddChild(player, true);
             player.Id = id;
             IdToPlayer[id] = player;
         };
