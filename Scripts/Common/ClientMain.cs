@@ -21,11 +21,6 @@ public partial class ClientMain : AbstractMain
         RegisterPackedSceneInstantiation<ILoginView>("res://Scripts/Client/LoginView.tscn");
 
 
-        container.Verify();
-
-        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
-        {
-            typesRegisteredAsNode.ForEach(AddRegisteredNodes);
-        });
+        VerifyAndAddNodesAndStartAsync();
     }
 }

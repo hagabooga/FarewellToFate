@@ -51,4 +51,29 @@ public abstract partial class AbstractMain : ExplicitNode
         var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
         genericMethod.Invoke(container, [node]);
     }
+
+
+    protected void VerifyAndAddNodesAndStartAsync()
+    {
+        container.Verify();
+
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            typesRegisteredAsNode.ForEach(AddRegisteredNodes);
+        });
+
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            typesRegisteredAsNode.ForEach(x =>
+            {
+                if (x.GetType().IsAssignableFrom(typeof(IAsyncStartable)))
+                {
+                    Print(x.GetType().Name);
+                    var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(x);
+                    var node = (IAsyncStartable)genericMethod.Invoke(container, []);
+                    node.StartAsync();
+                }
+            });
+        });
+    }
 }
