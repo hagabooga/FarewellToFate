@@ -3,11 +3,14 @@ using static Godot.GD;
 
 namespace FarewellToFate;
 
-public partial class OLdServer : ENetMultiplayerPeer
+public partial class ENetServer : ENetMultiplayerPeer
 {
-    public OLdServer()
+    private const int Port = 6969;
+
+    public ENetServer()
     {
-        CreateServer(6969);
+        CreateServer(Port);
+        Print($"Server - Server started on port: {Port}");
 
         PeerConnected += id =>
         {

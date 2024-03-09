@@ -32,44 +32,15 @@ public partial class LobbyView : ExplicitNode
 
         CreateServerButton.Pressed += () =>
         {
-            DebugLineEdit1.Text = DebugLineEdit1.Name = "Server";
-            Multiplayer.MultiplayerPeer = new OLdServer();
-            Multiplayer.MultiplayerPeer.PeerConnected += id =>
-            {
-                var player = playerPs.Instantiate<Player>();
-                player.Name = id.ToString();
-                Players.AddChild(player, true);
-                player.Id = id;
-                IdToPlayer[id] = player;
-            };
+            GetTree().Root.AddChild(Load<PackedScene>("res://ServerMain.tscn").Instantiate());
+            GetParent().QueueFree();
         };
 
         JoinServerButton.Pressed += () =>
         {
-            DebugLineEdit1.Text = DebugLineEdit1.Name = "Client";
-            Multiplayer.MultiplayerPeer = new ClientOld();
-            Multiplayer.MultiplayerPeer.PeerConnected += id =>
-            {
-                GDTask.Create(async () =>
-                {
-                    await GDTask.Yield();
-                    RpcId(1, nameof(ReceiveUsername), NameLineEdit.Text);
-                }).Forget();
-            };
+            GetTree().Root.AddChild(Load<PackedScene>("res://ClientMain.tscn").Instantiate());
+            GetParent().QueueFree();
         };
     }
-
-    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-    public void ReceiveUsername(string username)
-    {
-        IdToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
-    }
-
-    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-    public void SendChatMessage(string text)
-    {
-        throw new NotImplementedException();
-    }
-
 }
 

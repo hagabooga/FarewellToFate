@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtydc8vjhwbjx"]
+[gd_scene load_steps=3 format=3 uid="uid://dtydc8vjhwbjx"]
 
 [ext_resource type="Script" path="res://Scripts/LobbyView.cs" id="1_l14fd"]
 [ext_resource type="PackedScene" uid="uid://p2opiokvrwwk" path="res://Player.tscn" id="2_iudpi"]
-[ext_resource type="PackedScene" uid="uid://cloonhtcytybe" path="res://ChatBox.tscn" id="3_x83rd"]
 
 [node name="LobbyView" type="Node"]
 script = ExtResource("1_l14fd")
@@ -70,5 +69,3 @@ text = "Join Server"
 _spawnable_scenes = PackedStringArray("res://Player.tscn")
 spawn_path = NodePath("../Players")
 spawn_limit = 10
-
-[node name="ChatBox" parent="." instance=ExtResource("3_x83rd")]

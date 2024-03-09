@@ -9,13 +9,11 @@ public abstract partial class AbstractMain : ExplicitNode
     protected readonly SimpleInjector.Container container = new();
     protected readonly List<Type> typesRegisteredAsNode = [];
 
-    protected void RegisterNode<T>(T node) where T : Node
+    public override void _Ready()
     {
-        var type = typeof(T);
-        var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
-        genericMethod.Invoke(container, [node]);
-        node.Name = type.Name;
+        base._Ready();
     }
+
 
     protected void RegisterPackedSceneInstantiation<T>(string path) where T : Node
     {
@@ -26,7 +24,7 @@ public abstract partial class AbstractMain : ExplicitNode
     {
         var type = typeof(T);
         T node = ps.Instantiate<T>();
-        RegisterNode(node);
+        RegisterNodeInstance(node);
         typesRegisteredAsNode.Add(type);
     }
 
@@ -43,6 +41,14 @@ public abstract partial class AbstractMain : ExplicitNode
         var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(type);
         var node = (Node)genericMethod.Invoke(container, []);
         GetTree().Root.AddChild(node, true);
+        node.Name = type.Name;
+    }
+
+    protected void RegisterNodeInstance<T>(T node) where T : Node
+    {
+        var type = typeof(T);
+        var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
+        genericMethod.Invoke(container, [node]);
         node.Name = type.Name;
     }
 }

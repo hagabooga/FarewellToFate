@@ -6,7 +6,7 @@ using static Godot.GD;
 
 namespace FarewellToFate;
 
-public partial class ChatBoxPresenter
+public partial class ChatBoxClientPresenter
 (
     IChatBoxView view,
     ChatBoxModel model

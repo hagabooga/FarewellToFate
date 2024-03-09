@@ -16,10 +16,9 @@ public partial class Main : AbstractMain
         Engine.MaxFps = 200;
 
         RegisterSingleton<HotkeyInputs>();
-        RegisterNode(LobbyView);
+        RegisterNodeInstance(LobbyView);
 
         container.Verify();
-
 
         Fast.CreateForgetGDTaskWithFrameDelay(async () =>
         {

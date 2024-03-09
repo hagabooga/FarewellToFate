@@ -1,8 +1,8 @@
 using Godot;
 
-namespace FarewellToFate.Server;
+namespace FarewellToFate;
 
-public partial class ServerMain : AbstractMain
+public partial class ClientMain : AbstractMain
 {
     public override void _Ready()
     {
@@ -10,11 +10,15 @@ public partial class ServerMain : AbstractMain
 
         Engine.MaxFps = 200;
 
-        RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
+        ENetClient eNetClient = new();
+        GetTree().Root.Multiplayer.MultiplayerPeer = eNetClient;
+        container.RegisterInstance(eNetClient);
+
         RegisterSingleton<PlayerInformation>();
-        ENetServer eNetServer = new();
-        GetTree().Root.Multiplayer.MultiplayerPeer = eNetServer;
-        container.RegisterInstance(eNetServer);
+
+
+        RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
+
 
         container.Verify();
 
