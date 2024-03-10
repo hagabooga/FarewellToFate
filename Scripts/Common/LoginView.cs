@@ -12,10 +12,5 @@ public partial class LoginView : ExplicitNode, ILoginView
         remove => UsernameLineEdit.TextSubmitted -= value;
     }
 
-    public LoginView()
-    {
-        Print("LoginView constructor");
-    }
-
 
 }

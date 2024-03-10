@@ -1,31 +1,25 @@
 using Fractural.Tasks;
-using Godot;
-
+using static Godot.GD;
 namespace FarewellToFate;
 
-public partial class PlayerInformation(ENetClient client, ILoginView view) : Node, IAsyncStartable
+public partial class PlayerInformation
+(
+    ENetClient client,
+    ILoginView view
+) : PlayerInformationBase, IAsyncStartable
 {
     public override void _Ready()
     {
         base._Ready();
-        AddChild(new Node()
-        {
-            Name = "Players"
-        });
-        MultiplayerSpawner node = new();
-        node.AddSpawnableScene("res://Player.tscn");
-        AddChild(node);
-        node.SpawnPath = "../Players";
+        AddMultiplayerSync();
     }
 
     public async GDTask StartAsync()
     {
+        Print("PlayerInformation StartAsync");
         view.TextSubmitted += username =>
         {
-            Fast.CreateForgetGDTaskWithFrameDelay(async () =>
-            {
-                this.RpcServer(nameof(Server.PlayerInformation.ReturnUsername), username);
-            });
+            this.RpcServer(nameof(ReceiveUsername), username);
         };
     }
 }

@@ -1,3 +1,4 @@
+using Fractural.Tasks;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -66,12 +67,11 @@ public abstract partial class AbstractMain : ExplicitNode
         {
             typesRegisteredAsNode.ForEach(x =>
             {
-                if (x.GetType().IsAssignableFrom(typeof(IAsyncStartable)))
+                if (typeof(IAsyncStartable).IsAssignableFrom(x))
                 {
-                    Print(x.GetType().Name);
                     var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(x);
                     var node = (IAsyncStartable)genericMethod.Invoke(container, []);
-                    node.StartAsync();
+                    node.StartAsync().Forget();
                 }
             });
         });
