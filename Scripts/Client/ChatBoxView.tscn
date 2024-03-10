@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://vm31y5sec7vo"]
+
+[ext_resource type="Script" path="res://Scripts/Common/ChatBoxView.cs" id="2_l78ej"]
+[ext_resource type="PackedScene" uid="uid://dq1q1r1h6j2gx" path="res://Scripts/Client/ChatBoxLabel.tscn" id="3_6rvos"]
+[ext_resource type="Theme" uid="uid://cpjvfi6lb87hv" path="res://Theme.tres" id="4_f2erg"]
+
+[node name="ChatBoxView" type="Node"]
+script = ExtResource("2_l78ej")
+labelPs = ExtResource("3_6rvos")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_f2erg")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -405.0
+offset_right = 805.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="MessagesVBox" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -7
+
+[node name="MessageLineEdit" type="LineEdit" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Type a message here..."
+caret_blink = true

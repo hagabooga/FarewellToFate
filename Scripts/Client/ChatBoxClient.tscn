@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://vm31y5sec7vo"]
-
-[ext_resource type="PackedScene" uid="uid://dllr1dvux7ic5" path="res://Scripts/Common/ChatBoxModel.tscn" id="1_370xg"]
-
-[node name="ChatBoxClient" instance=ExtResource("1_370xg")]
-script = null

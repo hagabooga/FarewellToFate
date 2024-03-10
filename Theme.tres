@@ -1,11 +1,11 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://cpjvfi6lb87hv"]
 
-[ext_resource type="FontFile" uid="uid://c8uidwn7agn1e" path="res://segoeuil.ttf" id="1_vbplo"]
+[ext_resource type="FontFile" uid="uid://b1cfbuaog5xts" path="res://segoeui.ttf" id="1_nncbe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwbsa"]
 
 [resource]
-default_font = ExtResource("1_vbplo")
+default_font = ExtResource("1_nncbe")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

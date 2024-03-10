@@ -9,22 +9,24 @@ namespace FarewellToFate;
 public partial class ChatBoxClientPresenter
 (
     IChatBoxView view,
-    ChatBoxModel model
-) : Node
+    ChatBoxNet model
+) : Node, IAsyncStartable
 {
     public override void _Ready()
     {
         base._Ready();
-        view.TextSubmitted += text =>
+    }
+
+    public async GDTask StartAsync()
+    {
+        view.TextSubmitted += msg =>
         {
-            if (text.IsNullOrWhiteSpace()) return;
+            if (msg.IsNullOrWhiteSpace()) return;
             view.Message = "";
-            this.RpcServer(nameof(model.ReceiveMessage), text);
+            model.SendServerMessage(
+                msg);
         };
 
-        model.ChatBoxUpdated += () => Fast.CreateForgetGDTaskWithFrameDelay(async () =>
-        {
-            view.Message = string.Join("\n", model.Messages);
-        });
+        model.MessageReceived += view.ReceiveMessage;
     }
 }

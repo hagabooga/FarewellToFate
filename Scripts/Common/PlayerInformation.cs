@@ -17,9 +17,13 @@ public partial class PlayerInformation
     public async GDTask StartAsync()
     {
         Print("PlayerInformation StartAsync");
-        view.TextSubmitted += username =>
+        view.TextChanged += username =>
         {
             this.RpcServer(nameof(ReceiveUsername), username);
         };
+        // view.TextSubmitted += username =>
+        // {
+        //     this.RpcServer(nameof(ReceiveUsername), username);
+        // };
     }
 }

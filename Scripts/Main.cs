@@ -15,7 +15,6 @@ public partial class Main : AbstractMain
 
         Engine.MaxFps = 200;
 
-        RegisterSingleton<HotkeyInputs>();
         RegisterNodeInstance(LobbyView);
 
         container.Verify();

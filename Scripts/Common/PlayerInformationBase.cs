@@ -3,7 +3,7 @@ using Godot.Collections;
 
 namespace FarewellToFate;
 
-public partial class PlayerInformationBase : Node
+public partial class PlayerInformationBase : Node, IPlayerInformation
 {
     [Export] public Dictionary<long, Player> IdToPlayer { get; protected set; } = null;
 
@@ -29,4 +29,10 @@ public partial class PlayerInformationBase : Node
         IdToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
     }
 
+}
+
+public interface IPlayerInformation
+{
+    Dictionary<long, Player> IdToPlayer { get; }
+    void ReceiveUsername(string username);
 }

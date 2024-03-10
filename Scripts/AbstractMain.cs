@@ -16,6 +16,12 @@ public abstract partial class AbstractMain : ExplicitNode
         base._Ready();
     }
 
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        container.Dispose();
+    }
+
     protected void RegisterPackedSceneInstantiation<T>(string path) where T : class
     {
         RegisterPackedSceneInstantiation<T>(Load<PackedScene>(path));
@@ -27,6 +33,16 @@ public abstract partial class AbstractMain : ExplicitNode
         T node = ps.Instantiate<T>();
         RegisterNodeInstance(node);
         typesRegisteredAsNode.Add(type);
+    }
+
+    protected void RegisterSingleton<TI, T>() where T : class
+    {
+        var t = typeof(T);
+        var ti = typeof(TI);
+        var genericMethod = SimpleInjectorUtility.RegisterSingleton2Type0Args.MakeGenericMethod(ti, t);
+        genericMethod.Invoke(container, []);
+
+        typesRegisteredAsNode.Add(ti);
     }
 
     protected void RegisterSingleton<T>() where T : class
@@ -67,10 +83,9 @@ public abstract partial class AbstractMain : ExplicitNode
         {
             typesRegisteredAsNode.ForEach(x =>
             {
-                if (typeof(IAsyncStartable).IsAssignableFrom(x))
+                if (SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(x).Invoke(container, [])
+                    is IAsyncStartable node)
                 {
-                    var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(x);
-                    var node = (IAsyncStartable)genericMethod.Invoke(container, []);
                     node.StartAsync().Forget();
                 }
             });

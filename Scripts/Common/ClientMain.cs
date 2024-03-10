@@ -14,10 +14,13 @@ public partial class ClientMain : AbstractMain
         GetTree().Root.Multiplayer.MultiplayerPeer = eNetClient;
         container.RegisterInstance(eNetClient);
 
-        RegisterSingleton<PlayerInformation>();
+        RegisterSingleton<HotkeyInputs>();
+        RegisterSingleton<IPlayerInformation, PlayerInformation>();
+        RegisterSingleton<ChatBoxClientPresenter>();
+        RegisterSingleton<ChatBoxNet>();
 
 
-        RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
+        RegisterPackedSceneInstantiation<IChatBoxView>("res://Scripts/Client/ChatBoxView.tscn");
         RegisterPackedSceneInstantiation<ILoginView>("res://Scripts/Client/LoginView.tscn");
 
 

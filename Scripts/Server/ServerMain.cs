@@ -10,8 +10,8 @@ public partial class ServerMain : AbstractMain
 
         Engine.MaxFps = 200;
 
-        RegisterPackedSceneInstantiation<ChatBoxModel>("res://Scripts/Common/ChatBoxModel.tscn");
-        RegisterSingleton<PlayerInformation>();
+        RegisterSingleton<ChatBoxNet>();
+        RegisterSingleton<IPlayerInformation, PlayerInformation>();
         ENetServer eNetServer = new();
         GetTree().Root.Multiplayer.MultiplayerPeer = eNetServer;
         container.RegisterInstance(eNetServer);
@@ -20,3 +20,4 @@ public partial class ServerMain : AbstractMain
     }
 
 }
+

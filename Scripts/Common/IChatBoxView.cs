@@ -6,6 +6,6 @@ public interface IChatBoxView
 {
     event LineEdit.TextSubmittedEventHandler TextSubmitted;
 
-    string Messages { set; }
+    void ReceiveMessage(string message);
     string Message { get; set; }
 }
