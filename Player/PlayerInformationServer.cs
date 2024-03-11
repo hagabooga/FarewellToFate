@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace FarewellToFate.Server;
+namespace FarewellToFate;
 
 public partial class PlayerInformationServer(ENetServer server) : PlayerInformationBase
 {
@@ -23,6 +23,7 @@ public partial class PlayerInformationServer(ENetServer server) : PlayerInformat
             playersNode.AddChild(player, true);
             player.Id = id;
             IdToPlayer[id] = player;
+            player.SetMultiplayerAuthority((int)id);
         };
 
         server.PeerDisconnected += id =>

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dattw47dcemy8"]
+
+[ext_resource type="Script" path="res://Player/PlayerCharacter.cs" id="1_1rlqy"]
+[ext_resource type="Texture2D" uid="uid://brlsqac2wunj7" path="res://animehead.png" id="2_6fma4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_as51l"]
+radius = 37.0
+height = 118.0
+
+[node name="PlayerCharacter" type="Node"]
+script = ExtResource("1_1rlqy")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+platform_floor_layers = 4294967294
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.243, 0.222)
+texture = ExtResource("2_6fma4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_as51l")

@@ -4,6 +4,8 @@ namespace FarewellToFate;
 
 public partial class ClientMain : AbstractMain
 {
+    [ExplicitChild] public SoccerFieldTest SoccerFieldTest { get; }
+
     public override void _Ready()
     {
         base._Ready();
@@ -14,10 +16,15 @@ public partial class ClientMain : AbstractMain
         GetTree().Root.Multiplayer.MultiplayerPeer = eNetClient;
         container.RegisterInstance(eNetClient);
 
+
         RegisterSingleton<HotkeyInputs>();
         RegisterSingleton<IPlayerInformation, PlayerInformationClient>();
         RegisterSingleton<ChatBoxClientPresenter>();
         RegisterSingleton<ChatBoxNet>();
+
+
+        container.RegisterInstance(SoccerFieldTest);
+        RegisterSingleton<PlayerSpawner>();
 
 
         RegisterPackedSceneInstantiation<IChatBoxView>("res://ChatBox/ChatBoxView.tscn");
