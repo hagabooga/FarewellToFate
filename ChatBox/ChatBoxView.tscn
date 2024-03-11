@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vm31y5sec7vo"]
 
-[ext_resource type="Script" path="res://Scripts/Common/ChatBoxView.cs" id="2_l78ej"]
-[ext_resource type="PackedScene" uid="uid://dq1q1r1h6j2gx" path="res://Scripts/Client/ChatBoxLabel.tscn" id="3_6rvos"]
+[ext_resource type="Script" path="res://ChatBox/ChatBoxView.cs" id="2_l78ej"]
+[ext_resource type="PackedScene" uid="uid://dq1q1r1h6j2gx" path="res://ChatBox/ChatBoxLabel.tscn" id="3_6rvos"]
 [ext_resource type="Theme" uid="uid://cpjvfi6lb87hv" path="res://Theme.tres" id="4_f2erg"]
 
 [node name="ChatBoxView" type="Node"]

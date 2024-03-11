@@ -20,7 +20,7 @@ public partial class ClientMain : AbstractMain
         RegisterSingleton<ChatBoxNet>();
 
 
-        RegisterPackedSceneInstantiation<IChatBoxView>("res://Scripts/Client/ChatBoxView.tscn");
+        RegisterPackedSceneInstantiation<IChatBoxView>("res://ChatBox/ChatBoxView.tscn");
         RegisterPackedSceneInstantiation<ILoginView>("res://Scripts/Client/LoginView.tscn");
 
 
