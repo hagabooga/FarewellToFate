@@ -36,7 +36,6 @@ public partial class Player : ExplicitNode
 	{
 		base._EnterTree();
 		SetMultiplayerAuthority(int.Parse(Name));
-
 	}
 
 	public override void _Ready()

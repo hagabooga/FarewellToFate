@@ -18,24 +18,7 @@ public partial class PlayerCharacter : ExplicitNode
 		if (IsMultiplayerAuthority())
 		{
 			base._PhysicsProcess(delta);
-			MoveDirection = Vector2.Zero;
-
-			if (Input.IsActionPressed("ui_up"))
-			{
-				MoveDirection += Vector2.Up;
-			}
-			if (Input.IsActionPressed("ui_down"))
-			{
-				MoveDirection += Vector2.Down;
-			}
-			if (Input.IsActionPressed("ui_left"))
-			{
-				MoveDirection += Vector2.Left;
-			}
-			if (Input.IsActionPressed("ui_right"))
-			{
-				MoveDirection += Vector2.Right;
-			}
+			MoveDirection = Input.GetVector("Left", "Right", "Up", "Down");
 			CharacterBody2D.Velocity = MoveDirection.Normalized() * MoveSpeed;
 		}
 		CharacterBody2D.MoveAndSlide();

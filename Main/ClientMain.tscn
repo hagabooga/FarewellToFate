@@ -8,10 +8,9 @@
 script = ExtResource("1_hheul")
 
 [node name="SoccerFieldTest" type="Sprite2D" parent="."]
-position = Vector2(1017, 543)
-scale = Vector2(1.25052, 1.32285)
+position = Vector2(960.5, 540)
+scale = Vector2(0.999479, 0.89404)
 texture = ExtResource("2_pmhlv")
 script = ExtResource("3_etxqt")
 
 [node name="SpawnPoint" type="Marker2D" parent="SoccerFieldTest"]
-position = Vector2(-1.59933, 17.3867)

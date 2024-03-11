@@ -20,8 +20,10 @@ public partial class PlayerSpawner
         playerInformation.Spawned += node => Fast.CreateForgetGDTaskWithFrameDelay(async () =>
         {
             Print($"Spawning player: {node}");
-
-            (node as Player).PlayerCharacter.CharacterBody2D.Position = soccerFieldTest.SpawnPoint.Position;
+            if (node is Player player)
+            {
+                player.PlayerCharacter.CharacterBody2D.GlobalPosition = soccerFieldTest.SpawnPoint.GlobalPosition;
+            }
         });
     }
 
