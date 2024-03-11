@@ -5,6 +5,8 @@ namespace FarewellToFate;
 
 public partial class PlayerInformationBase : Node, IPlayerInformation
 {
+    public const string PlayerScenePath = "res://Player/Player.tscn";
+
     [Export] public Dictionary<long, Player> IdToPlayer { get; protected set; } = null;
 
     protected Node playersNode;
@@ -16,7 +18,7 @@ public partial class PlayerInformationBase : Node, IPlayerInformation
             Name = "Players"
         };
         MultiplayerSpawner multiplayerSpanwer = new();
-        multiplayerSpanwer.AddSpawnableScene("res://Player.tscn");
+        multiplayerSpanwer.AddSpawnableScene(PlayerScenePath);
         multiplayerSpanwer.SpawnPath = "../Players";
 
         AddChild(playersNode);

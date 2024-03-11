@@ -16,13 +16,13 @@ public partial class LobbyView : ExplicitNode
 
         CreateServerButton.Pressed += () =>
         {
-            GetTree().Root.AddChild(Load<PackedScene>("res://ServerMain.tscn").Instantiate());
+            GetTree().Root.AddChild(Load<PackedScene>("res://Main/ServerMain.tscn").Instantiate());
             GetParent().QueueFree();
         };
 
         JoinServerButton.Pressed += () =>
         {
-            GetTree().Root.AddChild(Load<PackedScene>("res://ClientMain.tscn").Instantiate());
+            GetTree().Root.AddChild(Load<PackedScene>("res://Main/ClientMain.tscn").Instantiate());
             GetParent().QueueFree();
         };
     }

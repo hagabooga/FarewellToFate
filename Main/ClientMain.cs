@@ -21,7 +21,7 @@ public partial class ClientMain : AbstractMain
 
 
         RegisterPackedSceneInstantiation<IChatBoxView>("res://ChatBox/ChatBoxView.tscn");
-        RegisterPackedSceneInstantiation<ILoginView>("res://Scripts/Client/LoginView.tscn");
+        RegisterPackedSceneInstantiation<ILoginView>("res://Login/LoginView.tscn");
 
 
         VerifyAndAddNodesAndStartAsync();

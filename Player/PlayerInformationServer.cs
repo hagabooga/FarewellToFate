@@ -14,7 +14,7 @@ public partial class PlayerInformationServer(ENetServer server) : PlayerInformat
 
         AddMultiplayerSync();
 
-        playerPs = GD.Load<PackedScene>("res://Player.tscn");
+        playerPs = GD.Load<PackedScene>(PlayerScenePath);
 
         server.PeerConnected += id =>
         {

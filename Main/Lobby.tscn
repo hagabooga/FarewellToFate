@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dst5kjuohxs5e"]
+[gd_scene load_steps=2 format=3 uid="uid://dtydc8vjhwbjx"]
 
-[ext_resource type="Script" path="res://Scripts/Common/LoginView.cs" id="1_ip04h"]
+[ext_resource type="Script" path="res://Main/LobbyView.cs" id="1_l14fd"]
 
-[node name="LoginView" type="Node"]
-script = ExtResource("1_ip04h")
+[node name="LobbyView" type="Node"]
+script = ExtResource("1_l14fd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -28,7 +28,10 @@ offset_right = 317.5
 offset_bottom = 251.0
 grow_horizontal = 2
 
-[node name="UsernameLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+[node name="CreateServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-placeholder_text = "Username"
-max_length = 16
+text = "Create Server"
+
+[node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Join Server"
