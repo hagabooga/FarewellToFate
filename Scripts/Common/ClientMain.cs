@@ -15,7 +15,7 @@ public partial class ClientMain : AbstractMain
         container.RegisterInstance(eNetClient);
 
         RegisterSingleton<HotkeyInputs>();
-        RegisterSingleton<IPlayerInformation, PlayerInformation>();
+        RegisterSingleton<IPlayerInformation, PlayerInformationClient>();
         RegisterSingleton<ChatBoxClientPresenter>();
         RegisterSingleton<ChatBoxNet>();
 

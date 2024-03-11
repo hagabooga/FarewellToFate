@@ -6,10 +6,12 @@ public partial class Player : ExplicitNode
 {
 	private long id;
 	private string username;
+
 	[Export]
 	public long Id
 	{
-		get => id; set
+		get => id;
+		set
 		{
 			Print($"{Multiplayer?.GetUniqueId()}: Setting Id to " + value);
 			id = value;
@@ -18,7 +20,8 @@ public partial class Player : ExplicitNode
 	[Export]
 	public string Username
 	{
-		get => username; set
+		get => username;
+		set
 		{
 			Print($"{Multiplayer?.GetUniqueId()}: Setting Username to " + value);
 			username = value;

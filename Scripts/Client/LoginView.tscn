@@ -30,4 +30,5 @@ grow_horizontal = 2
 
 [node name="UsernameLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-placeholder_text = "Name"
+placeholder_text = "Username"
+max_length = 16

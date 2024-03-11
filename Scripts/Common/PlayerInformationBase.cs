@@ -28,11 +28,4 @@ public partial class PlayerInformationBase : Node, IPlayerInformation
     {
         IdToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
     }
-
-}
-
-public interface IPlayerInformation
-{
-    Dictionary<long, Player> IdToPlayer { get; }
-    void ReceiveUsername(string username);
 }

@@ -8,7 +8,7 @@ namespace FarewellToFate;
 
 public partial class ChatBoxClientPresenter
 (
-    IChatBoxView view,
+    IChatBoxView chatBoxView,
     ChatBoxNet model
 ) : Node, IAsyncStartable
 {
@@ -19,14 +19,13 @@ public partial class ChatBoxClientPresenter
 
     public async GDTask StartAsync()
     {
-        view.TextSubmitted += msg =>
+        chatBoxView.TextSubmitted += msg =>
         {
             if (msg.IsNullOrWhiteSpace()) return;
-            view.Message = "";
-            model.SendServerMessage(
-                msg);
+            chatBoxView.Message = "";
+            model.SendServerMessage(msg);
         };
 
-        model.MessageReceived += view.ReceiveMessage;
+        model.MessageReceived += chatBoxView.ReceiveMessage;
     }
 }

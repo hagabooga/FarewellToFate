@@ -11,7 +11,7 @@ public partial class ServerMain : AbstractMain
         Engine.MaxFps = 200;
 
         RegisterSingleton<ChatBoxNet>();
-        RegisterSingleton<IPlayerInformation, PlayerInformation>();
+        RegisterSingleton<IPlayerInformation, PlayerInformationServer>();
         ENetServer eNetServer = new();
         GetTree().Root.Multiplayer.MultiplayerPeer = eNetServer;
         container.RegisterInstance(eNetServer);

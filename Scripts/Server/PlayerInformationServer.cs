@@ -3,9 +3,8 @@ using Godot.Collections;
 
 namespace FarewellToFate.Server;
 
-public partial class PlayerInformation(ENetServer server) : PlayerInformationBase
+public partial class PlayerInformationServer(ENetServer server) : PlayerInformationBase
 {
-
     PackedScene playerPs;
 
     public override void _Ready()
@@ -24,6 +23,13 @@ public partial class PlayerInformation(ENetServer server) : PlayerInformationBas
             playersNode.AddChild(player, true);
             player.Id = id;
             IdToPlayer[id] = player;
+        };
+
+        server.PeerDisconnected += id =>
+        {
+            var player = IdToPlayer[id];
+            IdToPlayer.Remove(id);
+            player.QueueFree();
         };
     }
 

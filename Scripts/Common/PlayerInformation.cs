@@ -2,7 +2,7 @@ using Fractural.Tasks;
 using static Godot.GD;
 namespace FarewellToFate;
 
-public partial class PlayerInformation
+public partial class PlayerInformationClient
 (
     ENetClient client,
     ILoginView view
@@ -12,18 +12,15 @@ public partial class PlayerInformation
     {
         base._Ready();
         AddMultiplayerSync();
+
     }
 
     public async GDTask StartAsync()
     {
-        Print("PlayerInformation StartAsync");
-        view.TextChanged += username =>
+        // Print("PlayerInformation StartAsync");
+        view.TextSubmitted += username =>
         {
             this.RpcServer(nameof(ReceiveUsername), username);
         };
-        // view.TextSubmitted += username =>
-        // {
-        //     this.RpcServer(nameof(ReceiveUsername), username);
-        // };
     }
 }

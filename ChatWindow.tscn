@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck5vc3h6qj4th"]
+[gd_scene load_steps=3 format=3 uid="uid://be3uchw6u86h8"]
 
 [ext_resource type="Theme" uid="uid://cpjvfi6lb87hv" path="res://Theme.tres" id="1_6vno7"]
 [ext_resource type="Script" path="res://Scripts/ChatWindowView.cs" id="1_26dy6"]
