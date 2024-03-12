@@ -5,7 +5,7 @@ namespace FarewellToFate;
 
 public partial class ENetServer : ENetMultiplayerPeer
 {
-    private const int Port = 6969;
+    public const int Port = 6996;
 
     public ENetServer()
     {

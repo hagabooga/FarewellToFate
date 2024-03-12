@@ -15,14 +15,11 @@ public partial class Main : AbstractMain
 
         Engine.MaxFps = 200;
 
-        RegisterNodeInstance(LobbyView);
+        RegisterNodeInstance<ILobbyView>(LobbyView);
+        RegisterSingleton<LobbyModel>();
+        RegisterSingleton<LobbyPresenter>();
 
-        container.Verify();
+        VerifyAndAddNodesAndStartAsync();
 
-        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
-        {
-            typesRegisteredAsNode.ForEach(AddRegisteredNodes);
-        });
     }
-
 }

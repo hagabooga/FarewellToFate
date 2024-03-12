@@ -5,9 +5,9 @@ namespace FarewellToFate;
 
 public partial class ENetClient : ENetMultiplayerPeer
 {
-    public ENetClient()
+    public ENetClient(LobbyModel lobbyModel)
     {
-        CreateClient("127.0.0.1", 6969);
+        CreateClient(lobbyModel.IpAddress, ENetServer.Port);
 
         PeerConnected += id =>
         {

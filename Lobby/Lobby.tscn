@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtydc8vjhwbjx"]
 
-[ext_resource type="Script" path="res://Main/LobbyView.cs" id="1_l14fd"]
+[ext_resource type="Script" path="res://Lobby/LobbyView.cs" id="1_kdxhk"]
 
 [node name="LobbyView" type="Node"]
-script = ExtResource("1_l14fd")
+script = ExtResource("1_kdxhk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,3 +35,8 @@ text = "Create Server"
 [node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Join Server"
+
+[node name="IpAddressLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "127.0.0.1"
+placeholder_text = "IP Address"
