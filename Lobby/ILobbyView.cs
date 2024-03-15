@@ -8,4 +8,7 @@ public interface ILobbyView
     event LineEdit.TextChangedEventHandler IpAddressTextChanged;
     event Action CreateServerButtonPressed;
     event Action JoinServerButtonPressed;
+
+
+    void ToggleUI();
 }

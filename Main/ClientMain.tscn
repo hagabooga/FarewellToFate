@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://6vi7kk8c7m2w"]
 
 [ext_resource type="Script" path="res://Main/ClientMain.cs" id="1_hheul"]
-[ext_resource type="Texture2D" uid="uid://du27g73v1nfrp" path="res://soccerfield.jpg" id="2_pmhlv"]
+[ext_resource type="PackedScene" uid="uid://boqudq7idl5h8" path="res://Grass.tscn" id="2_dyxmh"]
 [ext_resource type="Script" path="res://Main/SoccerFieldTest.cs" id="3_etxqt"]
 
 [node name="ClientMain" type="Node"]
 script = ExtResource("1_hheul")
 
-[node name="SoccerFieldTest" type="Sprite2D" parent="."]
-position = Vector2(960.5, 540)
-scale = Vector2(0.999479, 0.89404)
-texture = ExtResource("2_pmhlv")
+[node name="SoccerFieldTest" parent="." instance=ExtResource("2_dyxmh")]
 script = ExtResource("3_etxqt")
 
 [node name="SpawnPoint" type="Marker2D" parent="SoccerFieldTest"]
+position = Vector2(154, 81)
+scale = Vector2(0.999479, 0.89404)

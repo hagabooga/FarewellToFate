@@ -29,6 +29,12 @@ public partial class LobbyView : ExplicitNode, ILobbyView
         remove => JoinServerButton.Pressed -= value;
     }
 
+    public void ToggleUI()
+    {
+        CanvasLayer.Visible = !CanvasLayer.Visible;
+    }
+
+
     public override void _Ready()
     {
         base._Ready();

@@ -15,28 +15,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="MarginContainer" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -317.5
-offset_top = 220.0
-offset_right = 317.5
-offset_bottom = 251.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = 17.0
+offset_right = -52.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CreateServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Farewell To Fate"
+horizontal_alignment = 1
+
+[node name="CreateServerButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Create Server"
 
-[node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+[node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Join Server"
 
-[node name="IpAddressLineEdit" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+[node name="IpAddressLineEdit" type="LineEdit" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "127.0.0.1"
 placeholder_text = "IP Address"

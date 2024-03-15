@@ -22,14 +22,13 @@ theme = ExtResource("4_f2erg")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -405.0
-offset_right = 805.0
-offset_bottom = -5.0
-grow_vertical = 0
+offset_top = 89.0
+offset_right = -198.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MessagesVBox" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
 custom_minimum_size = Vector2(0, 370)
@@ -49,9 +48,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -31.0
+offset_top = -21.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 9
 placeholder_text = "Type a message here..."
 caret_blink = true

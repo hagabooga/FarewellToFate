@@ -23,6 +23,7 @@ public partial class LobbyPresenter(ILobbyView view, LobbyModel model) : Node, I
             node.LobbyModel = model;
             GetTree().Root.AddChild(node);
             GetParent().SetProcess(false);
+            view.ToggleUI();
         };
     }
 }
