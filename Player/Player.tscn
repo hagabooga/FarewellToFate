@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://p2opiokvrwwk"]
+[gd_scene load_steps=4 format=3 uid="uid://p2opiokvrwwk"]
 
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_ovdyp"]
 [ext_resource type="PackedScene" uid="uid://dattw47dcemy8" path="res://Player/PlayerCharacter.tscn" id="2_iowgl"]
@@ -15,16 +15,13 @@ properties/2/spawn = false
 properties/2/replication_mode = 1
 properties/3/path = NodePath("PlayerCharacter/CharacterBody2D/CharacterSprite:animation")
 properties/3/spawn = true
-properties/3/replication_mode = 1
+properties/3/replication_mode = 2
 properties/4/path = NodePath("PlayerCharacter/CharacterBody2D/CharacterSprite:frame")
 properties/4/spawn = true
-properties/4/replication_mode = 1
+properties/4/replication_mode = 2
 properties/5/path = NodePath("PlayerCharacter/CharacterBody2D/CharacterSprite:speed_scale")
 properties/5/spawn = true
-properties/5/replication_mode = 1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf3re"]
-size = Vector2(2, 2)
+properties/5/replication_mode = 2
 
 [node name="Player" type="Node"]
 script = ExtResource("1_ovdyp")
@@ -34,7 +31,11 @@ replication_config = SubResource("SceneReplicationConfig_alqdu")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_iowgl")]
 
+[node name="CharacterBody2D" parent="PlayerCharacter" index="0"]
+slide_on_ceiling = false
+floor_stop_on_slope = false
+
 [node name="CollisionShape2D" parent="PlayerCharacter/CharacterBody2D" index="1"]
-shape = SubResource("RectangleShape2D_gf3re")
+position = Vector2(0, -0.375)
 
 [editable path="PlayerCharacter"]

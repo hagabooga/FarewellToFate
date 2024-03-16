@@ -7,7 +7,14 @@ namespace FarewellToFate;
 
 public partial class PlayerCharacter : ExplicitNode
 {
+	public enum Animation
+	{
+		Idle,
+		Walk,
+	}
+
 	[Export] public float MoveSpeed { get; private set; } = 50;
+	[Export] public Direction Direction { get; private set; } = Direction.Down;
 
 	[ExplicitChild] public CharacterBody2D CharacterBody2D { get; }
 	[ExplicitChild] public AnimatedSprite2D CharacterSprite { get; }
@@ -27,6 +34,7 @@ public partial class PlayerCharacter : ExplicitNode
 	{
 		base._Process(delta);
 		CharacterBody2D.GlobalPosition = CharacterBody2D.GlobalPosition.Round();
+		CharacterBody2D.ZIndex = (int)CharacterBody2D.GlobalPosition.Y;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -34,27 +42,32 @@ public partial class PlayerCharacter : ExplicitNode
 		if (IsMultiplayerAuthority())
 		{
 			base._PhysicsProcess(delta);
-			MoveDirection = Input.GetVector("Left", "Right", "Up", "Down");
+			MoveDirection = Input.GetVector(Direction.Left.ToString(),
+								   Direction.Right.ToString(),
+								   Direction.Up.ToString(),
+								   Direction.Down.ToString());
+			var animation = Animation.Idle;
+			if (MoveDirection != Vector2.Zero)
+			{
+				animation = Animation.Walk;
+			}
 			if (MoveDirection.X < 0)
 			{
-				CharacterSprite.Play("WalkLeft");
+				Direction = Direction.Left;
 			}
 			else if (MoveDirection.X > 0)
 			{
-				CharacterSprite.Play("WalkRight");
+				Direction = Direction.Right;
 			}
 			else if (MoveDirection.Y < 0)
 			{
-				CharacterSprite.Play("WalkUp");
+				Direction = Direction.Up;
 			}
 			else if (MoveDirection.Y > 0)
 			{
-				CharacterSprite.Play("WalkDown");
+				Direction = Direction.Down;
 			}
-			else
-			{
-				CharacterSprite.Play("default");
-			}
+			CharacterSprite.Play($"{animation}{Direction}");
 			CharacterBody2D.Velocity = MoveDirection.Normalized() * MoveSpeed;
 		}
 		CharacterBody2D.MoveAndSlide();
