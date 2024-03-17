@@ -27,6 +27,9 @@ public partial class ClientMain : AbstractMain
         RegisterSingleton<IPlayerInformation, PlayerInformationClient>();
         RegisterSingleton<ChatBoxClientPresenter>();
         RegisterSingleton<ChatBoxNet>();
+        RegisterSingleton<PlantDatabase>();
+        RegisterSingleton<MapMousePresenter>();
+        RegisterSingleton<Plant.Factory>();
 
 
         container.RegisterInstance(MapView);

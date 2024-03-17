@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1mt0fyegytyq"]
+
+[ext_resource type="Script" path="res://Plants/PlantDatabase.cs" id="1_gyenb"]
+
+[node name="PlantDatabase" type="Node"]
+script = ExtResource("1_gyenb")

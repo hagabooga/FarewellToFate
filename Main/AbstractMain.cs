@@ -58,12 +58,12 @@ public abstract partial class AbstractMain : ExplicitNode
         var genericMethod = SimpleInjectorUtility.GetInstance1Type0Args.MakeGenericMethod(type);
         var node = (Node)genericMethod.Invoke(container, []);
         GetTree().Root.AddChild(node, true);
-        node.Name = type.Name;
+        node.Name = type.FullName;
     }
 
     protected void RegisterNodeInstance<T>(T node) where T : class
     {
-        Print(node.GetType().Name);
+        // Print(node.GetType().Name);
         var type = typeof(T);
         var genericMethod = SimpleInjectorUtility.RegisterInstance1Type1Args.MakeGenericMethod(type);
         genericMethod.Invoke(container, [node]);

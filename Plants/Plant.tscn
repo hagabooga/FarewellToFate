@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkxxhqsx5cq21"]
+
+[ext_resource type="Texture2D" uid="uid://ctb7hmsp27h8k" path="res://Sprites/TilledSoil.png" id="1_3p3aj"]
+[ext_resource type="Script" path="res://Plants/Plant.cs" id="1_v4ecw"]
+
+[node name="Plant" type="Node"]
+script = ExtResource("1_v4ecw")
+
+[node name="PlantNode2D" type="Node2D" parent="."]
+
+[node name="TilledSoilSprite" type="Sprite2D" parent="PlantNode2D"]
+texture = ExtResource("1_3p3aj")
+centered = false
+
+[node name="PlantSprite" type="Sprite2D" parent="PlantNode2D"]
+centered = false

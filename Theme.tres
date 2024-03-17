@@ -1,11 +1,12 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://cpjvfi6lb87hv"]
 
-[ext_resource type="FontFile" uid="uid://b1cfbuaog5xts" path="res://segoeui.ttf" id="1_nncbe"]
+[ext_resource type="FontFile" uid="uid://ysqvsv120ufs" path="res://Minecraft.ttf" id="1_2vad7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwbsa"]
 
 [resource]
-default_font = ExtResource("1_nncbe")
+default_font = ExtResource("1_2vad7")
+default_font_size = 16
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

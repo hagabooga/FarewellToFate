@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1fsgjtkb5f0p"
-path="res://.godot/imported/grass.png-79cf597cc1adecdff9d12adae9606f9b.ctex"
+uid="uid://c4tpjmlx51ejm"
+path="res://.godot/imported/Cauliflower.png-bd2463fe9de412379c293184575a3bc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass.png"
-dest_files=["res://.godot/imported/grass.png-79cf597cc1adecdff9d12adae9606f9b.ctex"]
+source_file="res://Plants/Sprites/Cauliflower.png"
+dest_files=["res://.godot/imported/Cauliflower.png-bd2463fe9de412379c293184575a3bc5.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

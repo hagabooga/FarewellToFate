@@ -24,6 +24,8 @@ public partial class PlayerInformationServer(ENetServer server) : PlayerInformat
             player.Id = id;
             IdToPlayer[id] = player;
             player.SetMultiplayerAuthority((int)id);
+
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Minimized);
         };
 
         server.PeerDisconnected += id =>

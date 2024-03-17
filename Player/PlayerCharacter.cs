@@ -35,6 +35,11 @@ public partial class PlayerCharacter : ExplicitNode
 	{
 		base._Process(delta);
 		CharacterBody2D.GlobalPosition = CharacterBody2D.GlobalPosition.Round();
+		CharacterBody2D.GlobalPosition = new()
+		{
+			X = Mathf.Max(CharacterBody2D.GlobalPosition.X, 0),
+			Y = Mathf.Max(CharacterBody2D.GlobalPosition.Y, 0)
+		};
 	}
 
 	public override void _PhysicsProcess(double delta)
