@@ -5,10 +5,9 @@ namespace FarewellToFate;
 
 public partial class ClientMain : AbstractMain
 {
-    [ExplicitChild] public SoccerFieldTest SoccerFieldTest { get; }
+    [ExplicitChild] public MapView MapView { get; }
 
     public LobbyModel LobbyModel { get; set; }
-
 
     public override void _Ready()
     {
@@ -30,7 +29,7 @@ public partial class ClientMain : AbstractMain
         RegisterSingleton<ChatBoxNet>();
 
 
-        container.RegisterInstance(SoccerFieldTest);
+        container.RegisterInstance(MapView);
         RegisterSingleton<PlayerSpawner>();
 
 

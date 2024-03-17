@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du27g73v1nfrp"
-path="res://.godot/imported/soccerfield.jpg-8c4ffb880dd11c9a6ac3e15165da4cbf.ctex"
+uid="uid://gxqqh7mcvfa5"
+path="res://.godot/imported/TileCursor2.png-5f2fbee2cf29eb00b6c77ae4f4d42b6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soccerfield.jpg"
-dest_files=["res://.godot/imported/soccerfield.jpg-8c4ffb880dd11c9a6ac3e15165da4cbf.ctex"]
+source_file="res://TileCursor2.png"
+dest_files=["res://.godot/imported/TileCursor2.png-5f2fbee2cf29eb00b6c77ae4f4d42b6b.ctex"]
 
 [params]
 

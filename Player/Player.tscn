@@ -31,9 +31,10 @@ replication_config = SubResource("SceneReplicationConfig_alqdu")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_iowgl")]
 
-[node name="CharacterBody2D" parent="PlayerCharacter" index="0"]
-slide_on_ceiling = false
-floor_stop_on_slope = false
+[node name="CharacterSprite" parent="PlayerCharacter/CharacterBody2D" index="0"]
+animation = &"IdleDown"
+frame = 0
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="PlayerCharacter/CharacterBody2D" index="1"]
 position = Vector2(0, -0.375)

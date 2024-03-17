@@ -4,8 +4,6 @@ namespace FarewellToFate;
 
 public partial class ServerMain : AbstractMain
 {
-    [ExplicitChild] public SoccerFieldTest SoccerFieldTest { get; }
-
     public LobbyModel LobbyModel { get; set; }
 
     public override void _Ready()

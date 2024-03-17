@@ -1,17 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfaerat30ng4k"]
+[gd_scene load_steps=2 format=3 uid="uid://cfaerat30ng4k"]
 
 [ext_resource type="Script" path="res://Main/ServerMain.cs" id="1_v0nis"]
-[ext_resource type="Texture2D" uid="uid://du27g73v1nfrp" path="res://soccerfield.jpg" id="2_bu0yg"]
-[ext_resource type="Script" path="res://Main/SoccerFieldTest.cs" id="3_7dy00"]
 
 [node name="ServerMain" type="Node"]
 script = ExtResource("1_v0nis")
-
-[node name="SoccerFieldTest" type="Sprite2D" parent="."]
-position = Vector2(1017, 543)
-scale = Vector2(1.25052, 1.32285)
-texture = ExtResource("2_bu0yg")
-script = ExtResource("3_7dy00")
-
-[node name="SpawnPoint" type="Marker2D" parent="SoccerFieldTest"]
-position = Vector2(-1.59933, 17.3867)

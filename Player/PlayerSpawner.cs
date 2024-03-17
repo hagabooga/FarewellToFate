@@ -5,7 +5,7 @@ namespace FarewellToFate;
 
 public partial class PlayerSpawner
 (
-    SoccerFieldTest soccerFieldTest,
+    MapView mapView,
     IPlayerInformation playerInformation
 ) : Node, IAsyncStartable
 {
@@ -22,7 +22,7 @@ public partial class PlayerSpawner
             Print($"Spawning player: {node}");
             if (node is Player player)
             {
-                player.PlayerCharacter.CharacterBody2D.GlobalPosition = soccerFieldTest.SpawnPoint.GlobalPosition;
+                player.PlayerCharacter.CharacterBody2D.GlobalPosition = mapView.SpawnPoint.GlobalPosition;
             }
         });
     }

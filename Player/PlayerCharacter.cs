@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Net.Http.Headers;
 using Godot;
@@ -34,7 +35,6 @@ public partial class PlayerCharacter : ExplicitNode
 	{
 		base._Process(delta);
 		CharacterBody2D.GlobalPosition = CharacterBody2D.GlobalPosition.Round();
-		CharacterBody2D.ZIndex = (int)CharacterBody2D.GlobalPosition.Y;
 	}
 
 	public override void _PhysicsProcess(double delta)

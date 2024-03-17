@@ -1,0 +1,375 @@
+[gd_resource type="SpriteFrames" load_steps=81 format=3 uid="uid://ciu5rbdxmpkwj"]
+
+[ext_resource type="Texture2D" uid="uid://m5rrtmubmyw7" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet1.png" id="1_j2u45"]
+[ext_resource type="Texture2D" uid="uid://dwckddyg18q2e" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet2.png" id="2_7726v"]
+[ext_resource type="Texture2D" uid="uid://wi63a3ihgdgy" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet3.png" id="3_638xd"]
+[ext_resource type="Texture2D" uid="uid://cbiqhlyyd4b70" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet4.png" id="4_vv16r"]
+[ext_resource type="Texture2D" uid="uid://b1cdx7wq65hea" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet5.png" id="5_anpf2"]
+[ext_resource type="Texture2D" uid="uid://doebxt0k4oqkc" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet6.png" id="6_q8f3e"]
+[ext_resource type="Texture2D" uid="uid://bcl1pxx14iv5g" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet7.png" id="7_wy0cw"]
+[ext_resource type="Texture2D" uid="uid://bbn84n6waa86q" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet8.png" id="8_4bgn4"]
+[ext_resource type="Texture2D" uid="uid://beqjspmhm0a0k" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet17.png" id="9_wdoa2"]
+[ext_resource type="Texture2D" uid="uid://cv23kbr66p46j" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet18.png" id="10_5x0uq"]
+[ext_resource type="Texture2D" uid="uid://bfdi073bdm5xc" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet19.png" id="11_cfggg"]
+[ext_resource type="Texture2D" uid="uid://2rqh4gy2f6hi" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet20.png" id="12_c7npi"]
+[ext_resource type="Texture2D" uid="uid://eu0buwfa4ow7" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet21.png" id="13_6p6ag"]
+[ext_resource type="Texture2D" uid="uid://dronq7j54oduv" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet22.png" id="14_c4aob"]
+[ext_resource type="Texture2D" uid="uid://bmqqcp07rc2f8" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet23.png" id="15_wtwsk"]
+[ext_resource type="Texture2D" uid="uid://dauqn4lkkhta8" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet24.png" id="16_v0ekc"]
+[ext_resource type="Texture2D" uid="uid://d111buvjslpwb" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet25.png" id="17_ewkcm"]
+[ext_resource type="Texture2D" uid="uid://cd50gh6fxs2l1" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet26.png" id="18_v4y7g"]
+[ext_resource type="Texture2D" uid="uid://cn83c5vgjeeyq" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet27.png" id="19_8rq78"]
+[ext_resource type="Texture2D" uid="uid://meiy222qnp0w" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet28.png" id="20_8yh26"]
+[ext_resource type="Texture2D" uid="uid://dn1lnwq0nhqve" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet29.png" id="21_ud1vb"]
+[ext_resource type="Texture2D" uid="uid://dglhxruo7nroi" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet30.png" id="22_anloq"]
+[ext_resource type="Texture2D" uid="uid://cei0y0ly3woxa" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet31.png" id="23_bsxyv"]
+[ext_resource type="Texture2D" uid="uid://ck410e8fp5hpi" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet32.png" id="24_ljmbm"]
+[ext_resource type="Texture2D" uid="uid://bmx3mvysjo420" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet9.png" id="25_as207"]
+[ext_resource type="Texture2D" uid="uid://mws415pewacb" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet10.png" id="26_ji7sq"]
+[ext_resource type="Texture2D" uid="uid://c5kyb8mwj3n1h" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet11.png" id="27_qky75"]
+[ext_resource type="Texture2D" uid="uid://bfq563qfw3kjg" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet12.png" id="28_upg3b"]
+[ext_resource type="Texture2D" uid="uid://c2c65vvldfflp" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet13.png" id="29_5y0xq"]
+[ext_resource type="Texture2D" uid="uid://dqmgsojx6ga1r" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet14.png" id="30_iesq1"]
+[ext_resource type="Texture2D" uid="uid://clb7b2n6d4m2d" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet15.png" id="31_k68ot"]
+[ext_resource type="Texture2D" uid="uid://wmvttvudbjex" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet16.png" id="32_s1w72"]
+[ext_resource type="Texture2D" uid="uid://c528r8h5jf7de" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet65.png" id="33_nqxu8"]
+[ext_resource type="Texture2D" uid="uid://3adj3hb846l3" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet66.png" id="34_adut2"]
+[ext_resource type="Texture2D" uid="uid://cykx1vtxjgtmk" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet67.png" id="35_6ptjc"]
+[ext_resource type="Texture2D" uid="uid://cya245efnkvho" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet68.png" id="36_1mtwn"]
+[ext_resource type="Texture2D" uid="uid://bklq4cbhlheyo" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet69.png" id="37_vxa56"]
+[ext_resource type="Texture2D" uid="uid://70k8awtp3dce" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet70.png" id="38_mog1l"]
+[ext_resource type="Texture2D" uid="uid://4teg7pnavee3" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet71.png" id="39_dqt7o"]
+[ext_resource type="Texture2D" uid="uid://dl37clkyb1uds" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet72.png" id="40_b84st"]
+[ext_resource type="Texture2D" uid="uid://ckjo2iyjsfq6l" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet33.png" id="41_5kcrk"]
+[ext_resource type="Texture2D" uid="uid://be4dxyjrpjfrl" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet73.png" id="41_h0d72"]
+[ext_resource type="Texture2D" uid="uid://kyh810qop62m" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet34.png" id="42_u8xix"]
+[ext_resource type="Texture2D" uid="uid://bdecgwotssr3l" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet74.png" id="42_yuqcd"]
+[ext_resource type="Texture2D" uid="uid://ddr54td01oj7q" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet35.png" id="43_bilt0"]
+[ext_resource type="Texture2D" uid="uid://73fnv52ygp7m" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet75.png" id="43_ch2wv"]
+[ext_resource type="Texture2D" uid="uid://du2o684ljln22" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet76.png" id="44_lv6xw"]
+[ext_resource type="Texture2D" uid="uid://dklrta1o3yoi0" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet36.png" id="44_stsm5"]
+[ext_resource type="Texture2D" uid="uid://ibbmv6ba0y1q" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet37.png" id="45_1nyi0"]
+[ext_resource type="Texture2D" uid="uid://220hsqo27xxw" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet77.png" id="45_24pub"]
+[ext_resource type="Texture2D" uid="uid://c857k7v3j6vxx" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet78.png" id="46_adpnv"]
+[ext_resource type="Texture2D" uid="uid://dxtpah4cot55n" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet38.png" id="46_or7j2"]
+[ext_resource type="Texture2D" uid="uid://emrwnupjg72w" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet79.png" id="47_a0n6a"]
+[ext_resource type="Texture2D" uid="uid://cug50ip0h0pfk" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet39.png" id="47_qx4n5"]
+[ext_resource type="Texture2D" uid="uid://d11ugfkldu48g" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet80.png" id="48_gdc2p"]
+[ext_resource type="Texture2D" uid="uid://bwdqwm2va4s2g" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet40.png" id="48_pukgm"]
+[ext_resource type="Texture2D" uid="uid://b41oesl1u23xo" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet57.png" id="49_6ynpb"]
+[ext_resource type="Texture2D" uid="uid://b05nh1c8sodj7" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet58.png" id="50_d4mt0"]
+[ext_resource type="Texture2D" uid="uid://bf3yulyufevo4" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet59.png" id="51_8xdvk"]
+[ext_resource type="Texture2D" uid="uid://cxfq7eplg77gq" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet60.png" id="52_odt3b"]
+[ext_resource type="Texture2D" uid="uid://co1ptvbfmib7e" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet61.png" id="53_52qpj"]
+[ext_resource type="Texture2D" uid="uid://c55xlwm44vg4c" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet62.png" id="54_jb0ad"]
+[ext_resource type="Texture2D" uid="uid://rn4vrm8ota1f" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet63.png" id="55_ta4i0"]
+[ext_resource type="Texture2D" uid="uid://bh57fw1rv6wf" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet64.png" id="56_7vt1f"]
+[ext_resource type="Texture2D" uid="uid://bt8sk7ldt8th0" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet49.png" id="57_1b5db"]
+[ext_resource type="Texture2D" uid="uid://cws5kxulv4y6w" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet50.png" id="58_a504i"]
+[ext_resource type="Texture2D" uid="uid://bkvdsvoymfgvf" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet51.png" id="59_upab7"]
+[ext_resource type="Texture2D" uid="uid://c688rw6seu5dd" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet52.png" id="60_ideo8"]
+[ext_resource type="Texture2D" uid="uid://bq0xwn51lxslo" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet53.png" id="61_1axq4"]
+[ext_resource type="Texture2D" uid="uid://bjxrgo5r1bkue" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet54.png" id="62_l007i"]
+[ext_resource type="Texture2D" uid="uid://cvri2lbk6cpio" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet55.png" id="63_vvhc4"]
+[ext_resource type="Texture2D" uid="uid://d0wd3i6006b5" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet56.png" id="64_v07bl"]
+[ext_resource type="Texture2D" uid="uid://dvbbljhgci5fl" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet41.png" id="65_agd6u"]
+[ext_resource type="Texture2D" uid="uid://ds7ncj2nq25sl" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet42.png" id="66_kl2fl"]
+[ext_resource type="Texture2D" uid="uid://ch0vdafqs4f1w" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet43.png" id="67_npu8p"]
+[ext_resource type="Texture2D" uid="uid://b8ml3jaxgb44i" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet44.png" id="68_fdogj"]
+[ext_resource type="Texture2D" uid="uid://gouj3pc3rqgr" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet45.png" id="69_s2lxw"]
+[ext_resource type="Texture2D" uid="uid://d2oy5fudcp4ut" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet46.png" id="70_fv7ld"]
+[ext_resource type="Texture2D" uid="uid://c2f7yruo40gl3" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet47.png" id="71_g4llh"]
+[ext_resource type="Texture2D" uid="uid://cbfknengq64ki" path="res://Sprout Lands - Sprites - premium pack/Characters/PremiumCharacterSingles/Premium Charakter Spritesheet48.png" id="72_7w4xw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2u45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7726v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_638xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vv16r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_anpf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q8f3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wy0cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4bgn4")
+}],
+"loop": true,
+"name": &"IdleDown",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wdoa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5x0uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cfggg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c7npi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6p6ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c4aob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wtwsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v0ekc")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ewkcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v4y7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8rq78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8yh26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ud1vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_anloq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bsxyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ljmbm")
+}],
+"loop": true,
+"name": &"IdleRight",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_as207")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ji7sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qky75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_upg3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5y0xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_iesq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k68ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_s1w72")
+}],
+"loop": true,
+"name": &"IdleUp",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_nqxu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_adut2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6ptjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1mtwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vxa56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_mog1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_dqt7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_b84st")
+}],
+"loop": true,
+"name": &"RunDown",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_h0d72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yuqcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ch2wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lv6xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_24pub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_adpnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_a0n6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_gdc2p")
+}],
+"loop": true,
+"name": &"RunUp",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_5kcrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_u8xix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bilt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_stsm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_1nyi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_or7j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_qx4n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_pukgm")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_6ynpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_d4mt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8xdvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_odt3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_52qpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_jb0ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ta4i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_7vt1f")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_1b5db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_a504i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_upab7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ideo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1axq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_l007i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vvhc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_v07bl")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_agd6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_kl2fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_npu8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_fdogj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_s2lxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_fv7ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_g4llh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_7w4xw")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 12.0
+}]
