@@ -12,21 +12,19 @@ public partial class PlantDatabase : Node
 	{
 		base._Ready();
 
-		IReadOnlyCollection<PlantData> plantDatas =
-		[
-			new PlantData(PlantName.Turnip)
+		foreach (var plantData in new PlantData[]
+		{
+			new(PlantName.Turnip)
 			{
 				Stages = 3,
 				DaysToGrow = 3,
 			},
-			new PlantData(PlantName.Cauliflower)
+			new(PlantName.Cauliflower)
 			{
 				Stages = 4,
 				DaysToGrow = 4,
 			},
-		];
-
-		foreach (var plantData in plantDatas)
+		})
 		{
 			this.plantData.Add(plantData.Name, plantData);
 		}

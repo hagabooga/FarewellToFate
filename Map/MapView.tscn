@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Map/MapView.cs" id="1_ht7n7"]
 [ext_resource type="TileSet" uid="uid://debae5hartdnv" path="res://Map/Dirt.tres" id="3_7tlrr"]
 [ext_resource type="Texture2D" uid="uid://crxngm8byt2vb" path="res://TileCursor5.png" id="3_34wj8"]
-[ext_resource type="TileSet" uid="uid://yt5sfklgpsf3" path="res://Map/GrassHills.tres" id="3_kt50k"]
+[ext_resource type="TileSet" uid="uid://yt5sfklgpsf3" path="res://Map/RockGrass.tres" id="3_kt50k"]
 [ext_resource type="PackedScene" uid="uid://bkxxhqsx5cq21" path="res://Plants/Plant.tscn" id="5_wboon"]
 
 [node name="MapView" type="Node"]

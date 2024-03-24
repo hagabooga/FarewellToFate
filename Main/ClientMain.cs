@@ -28,6 +28,7 @@ public partial class ClientMain : AbstractMain
         RegisterSingleton<ChatBoxClientPresenter>();
         RegisterSingleton<ChatBoxNet>();
         RegisterSingleton<PlantDatabase>();
+        RegisterSingleton<ItemDatabase>();
         RegisterSingleton<MapMousePresenter>();
         RegisterSingleton<Plant.Factory>();
 
@@ -38,6 +39,7 @@ public partial class ClientMain : AbstractMain
 
         RegisterPackedSceneInstantiation<IChatBoxView>("res://ChatBox/ChatBoxView.tscn");
         RegisterPackedSceneInstantiation<ILoginView>("res://Login/LoginView.tscn");
+        RegisterPackedSceneInstantiation<InventoryView>("res://Items/InventoryView.tscn");
 
 
         VerifyAndAddNodesAndStartAsync();
