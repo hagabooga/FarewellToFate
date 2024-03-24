@@ -1,21 +1,18 @@
 using Godot;
-using System;
+using System.Collections.Generic;
 using System.Linq;
 
+
+
+
 namespace FarewellToFate;
-
-
 
 public partial class InventoryView : ExplicitNode
 {
 	[ExplicitChild] public HBoxContainer InventoryHotkeysHBox { get; }
+	public Variant CurrentDragData { get; set; }
 
-
-
-
-	TextureButton[] inventoryHotkeys;
-
-
+	IReadOnlyList<InventoryHotkeySlotView> inventoryHotkeys;
 
 
 
@@ -25,8 +22,7 @@ public partial class InventoryView : ExplicitNode
 	{
 		base._Ready();
 
-		inventoryHotkeys = InventoryHotkeysHBox.GetChildren()
-			.Cast<TextureButton>().ToArray();
+		inventoryHotkeys = InventoryHotkeysHBox.GetChildren().Cast<InventoryHotkeySlotView>().ToArray();
 	}
 
 }

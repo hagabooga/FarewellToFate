@@ -35,9 +35,9 @@ public partial class MapMousePresenter
         };
         if (Input.IsActionJustPressed("ClickLeft"))
         {
-            Print(globalCell);
+            // Print(globalCell);
             var dirtCell = view.Dirt.GetCellAtlasCoords(0, globalCell);
-            Print(dirtCell);
+            // Print(dirtCell);
             if (dirtCell == Vector2I.One || dirtCell.Y == 5 || dirtCell.Y == 6)
             {
                 var plant = plantFactory.CreatePlant(PlantName.Turnip);
