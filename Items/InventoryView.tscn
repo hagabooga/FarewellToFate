@@ -26,16 +26,16 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
-custom_minimum_size = Vector2(225, 35)
+custom_minimum_size = Vector2(216, 36)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -112.5
-offset_top = -35.0
-offset_right = 112.5
+offset_left = -108.0
+offset_top = -36.0
+offset_right = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_km122")
@@ -53,7 +53,7 @@ offset_right = 104.5
 offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="InventorySlot" type="TextureButton" parent="CanvasLayer/Control/Panel/InventoryHotkeysHBox"]
