@@ -15,6 +15,7 @@ public partial class PlayerCharacter : ExplicitNode
 	}
 
 	[Export] public float MoveSpeed { get; private set; } = 50;
+	[Export] public float RunSpeedMultiplier { get; private set; } = 2f;
 	[Export] public Direction Direction { get; private set; } = Direction.Down;
 
 	[ExplicitChild] public CharacterBody2D CharacterBody2D { get; }
@@ -72,8 +73,14 @@ public partial class PlayerCharacter : ExplicitNode
 			{
 				Direction = Direction.Down;
 			}
+			var totalMoveSpeed = MoveSpeed;
+			if (Input.IsActionPressed("Sprint"))
+			{
+				totalMoveSpeed *= RunSpeedMultiplier;
+			}
+			CharacterSprite.SpeedScale = totalMoveSpeed / MoveSpeed;
 			CharacterSprite.Play($"{animation}{Direction}");
-			CharacterBody2D.Velocity = MoveDirection.Normalized() * MoveSpeed;
+			CharacterBody2D.Velocity = MoveDirection.Normalized() * totalMoveSpeed;
 		}
 		CharacterBody2D.MoveAndSlide();
 	}
