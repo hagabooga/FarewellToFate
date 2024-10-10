@@ -4,6 +4,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace FarewellToFate;
 
+
 public partial class MapView : ExplicitNode
 {
 	[ExplicitChild] public Marker2D SpawnPoint { get; }
@@ -16,9 +17,6 @@ public partial class MapView : ExplicitNode
 	{
 		base._Ready();
 	}
-
-
-
 
 
 }
