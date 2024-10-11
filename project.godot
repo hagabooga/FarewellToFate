@@ -26,7 +26,7 @@ window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 mouse_cursor/custom_image="res://Sprout Lands - UI Pack - Basic pack/Sprite sheets/Mouse sprites/Triangle Mouse icon 1.png"
 window/snap_controls_to_pixels=true
@@ -34,6 +34,10 @@ window/snap_controls_to_pixels=true
 [dotnet]
 
 project/assembly_name="FarewellToFate"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/label_font_auto_sizer/plugin.cfg")
 
 [input]
 

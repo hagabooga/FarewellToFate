@@ -17,7 +17,7 @@ public partial class ChatBoxNet(IPlayerInformation playerInformation) : Node
     {
         // check profanity here
         this.RpcClients(nameof(ClientReceiveMessage),
-            $"{playerInformation.IdToPlayer[Multiplayer.GetRemoteSenderId()].Username}: {message}");
+            $"[{TimeOnly.FromDateTime(DateTime.Now).ToLongTimeString()}] {playerInformation.IdToPlayer[Multiplayer.GetRemoteSenderId()].Username}: {message}");
     }
 
     [Rpc(MultiplayerApi.RpcMode.Authority)]

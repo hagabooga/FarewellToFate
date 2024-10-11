@@ -11,8 +11,6 @@ public partial class DayTimerBase : Node
     [Export] public int Year { get; protected set; }
     [Export] public int Hour { get; protected set; }
     [Export] public int Minute { get; protected set; }
-
-
 }
 
 

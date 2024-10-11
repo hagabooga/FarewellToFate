@@ -34,11 +34,10 @@ public partial class ClientMain : AbstractMain
 
 
         container.RegisterInstance(MapView);
-        RegisterSingleton<PlayerSpawner>();
+        RegisterSingleton<ClientPlayerSpawner>();
 
 
         RegisterPackedSceneInstantiation<IChatBoxView>("res://ChatBox/ChatBoxView.tscn");
-        RegisterPackedSceneInstantiation<ILoginView>("res://Login/LoginView.tscn");
         RegisterPackedSceneInstantiation<InventoryView>("res://Items/InventoryView.tscn");
 
 

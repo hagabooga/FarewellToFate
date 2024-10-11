@@ -47,6 +47,10 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Create Server"
 
+[node name="UsernameLineEdit" type="LineEdit" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Username"
+
 [node name="JoinServerButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Join Server"

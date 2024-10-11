@@ -25,7 +25,7 @@ public partial class Player : ExplicitNode
 		get => username;
 		set
 		{
-			Print($"{Multiplayer?.GetUniqueId()}: Setting Username to " + value);
+			Print($"{Multiplayer?.GetUniqueId()}: Setting Id({Id}).Username to " + value);
 			username = value;
 		}
 	}

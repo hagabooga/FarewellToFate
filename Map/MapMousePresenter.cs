@@ -6,8 +6,7 @@ using static Godot.GD;
 namespace FarewellToFate;
 
 
-public partial class MapMousePresenter
-(
+public partial class MapMousePresenter(
     MapView view,
     Plant.Factory plantFactory
 ) : Node, IAsyncStartable

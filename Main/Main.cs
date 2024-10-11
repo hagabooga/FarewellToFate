@@ -20,6 +20,5 @@ public partial class Main : AbstractMain
         RegisterSingleton<LobbyPresenter>();
 
         VerifyAndAddNodesAndStartAsync();
-
     }
 }

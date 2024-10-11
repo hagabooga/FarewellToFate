@@ -9,9 +9,9 @@ script = ExtResource("2_l78ej")
 labelPs = ExtResource("3_6rvos")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,22 +26,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 89.0
+offset_top = 50.0
 offset_right = -198.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MessagesVBox" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
-custom_minimum_size = Vector2(0, 370)
+[node name="MessagesScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 7.0
+offset_left = 2.0
+offset_top = 1.0
+offset_bottom = 107.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = -7
+
+[node name="MessagesVBox" type="VBoxContainer" parent="CanvasLayer/Control/Panel/MessagesScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="MessageLineEdit" type="LineEdit" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -52,6 +53,7 @@ anchor_bottom = 1.0
 offset_top = -21.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 8
 placeholder_text = "Type a message here..."
+context_menu_enabled = false
 caret_blink = true

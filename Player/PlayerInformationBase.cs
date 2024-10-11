@@ -13,7 +13,6 @@ public partial class PlayerInformationBase : Node, IPlayerInformation
         remove => PlayerSpawner.Spawned -= value;
     }
 
-
     [Export] public Dictionary<long, Player> IdToPlayer { get; protected set; } = null;
 
     public MultiplayerSpawner PlayerSpawner { get; private set; } = new();

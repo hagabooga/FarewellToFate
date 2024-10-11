@@ -8,6 +8,7 @@ public partial class LobbyPresenter(ILobbyView view, LobbyModel model) : Node, I
     public async GDTask StartAsync()
     {
         view.IpAddressTextChanged += x => model.IpAddress = x;
+        view.UsernameTextChanged += x => model.Username = x;
 
         view.CreateServerButtonPressed += () =>
         {

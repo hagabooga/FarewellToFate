@@ -2,25 +2,26 @@ using Fractural.Tasks;
 using static Godot.GD;
 namespace FarewellToFate;
 
-public partial class PlayerInformationClient
-(
+public partial class PlayerInformationClient(
     ENetClient client,
-    ILoginView view
+    LobbyModel view
 ) : PlayerInformationBase, IAsyncStartable
 {
     public override void _Ready()
     {
         base._Ready();
         AddMultiplayerSync();
-
+        Fast.CreateForgetGDTaskWithFrameDelay(async () =>
+        {
+            this.RpcServer(nameof(ReceiveUsername), view.Username);
+        });
     }
 
     public async GDTask StartAsync()
     {
         // Print("PlayerInformation StartAsync");
-        view.TextSubmitted += username =>
-        {
-            this.RpcServer(nameof(ReceiveUsername), username);
-        };
+        // await GDTask.Yield();
+        // Print("PlayerInformation StartAsync After Yield");
+        // this.RpcServer(nameof(ReceiveUsername), view.Username);
     }
 }

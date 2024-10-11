@@ -3,10 +3,11 @@ using Godot;
 using static Godot.GD;
 namespace FarewellToFate;
 
-public partial class PlayerSpawner
+public partial class ClientPlayerSpawner
 (
     MapView mapView,
-    IPlayerInformation playerInformation
+    IPlayerInformation playerInformation,
+    IChatBoxView chatBoxView
 ) : Node, IAsyncStartable
 {
     public override void _Ready()
@@ -20,9 +21,11 @@ public partial class PlayerSpawner
         playerInformation.Spawned += node => Fast.CreateForgetGDTaskWithFrameDelay(async () =>
         {
             Print($"Spawning player: {node}");
+            // Do player init here
             if (node is Player player)
             {
                 player.PlayerCharacter.CharacterBody2D.GlobalPosition = mapView.SpawnPoint.GlobalPosition;
+                player.PlayerCharacter.PlayerMovableChecker = new(chatBoxView);
             }
         });
     }

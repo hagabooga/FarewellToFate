@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http.Headers;
 using Godot;
 using static Godot.GD;
@@ -23,6 +24,7 @@ public partial class PlayerCharacter : ExplicitNode
 	[ExplicitChild] public CollisionShape2D CollisionShape2D { get; }
 	[ExplicitChild] public Camera2D Camera2D { get; }
 
+	public PlayerMovableChecker PlayerMovableChecker { get; set; }
 
 	public Vector2 MoveDirection { get; private set; } = Vector2.Zero;
 
@@ -35,7 +37,7 @@ public partial class PlayerCharacter : ExplicitNode
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-		CharacterBody2D.GlobalPosition = CharacterBody2D.GlobalPosition.Round();
+		// CharacterBody2D.GlobalPosition = CharacterBody2D.GlobalPosition.Round();
 		CharacterBody2D.GlobalPosition = new()
 		{
 			X = Mathf.Max(CharacterBody2D.GlobalPosition.X, 0),
@@ -48,6 +50,10 @@ public partial class PlayerCharacter : ExplicitNode
 		if (IsMultiplayerAuthority())
 		{
 			base._PhysicsProcess(delta);
+			if (!PlayerMovableChecker.IsPlayerMovable)
+			{
+				return;
+			}
 			MoveDirection = Input.GetVector(Direction.Left.ToString(),
 								   Direction.Right.ToString(),
 								   Direction.Up.ToString(),
