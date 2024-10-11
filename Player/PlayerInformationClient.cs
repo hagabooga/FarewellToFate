@@ -11,10 +11,12 @@ public partial class PlayerInformationClient(
     {
         base._Ready();
         AddMultiplayerSync();
+
         Fast.CreateForgetGDTaskWithFrameDelay(async () =>
         {
             this.RpcServer(nameof(ReceiveUsername), view.Username);
         });
+
     }
 
     public async GDTask StartAsync()

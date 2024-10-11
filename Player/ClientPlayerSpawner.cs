@@ -21,11 +21,12 @@ public partial class ClientPlayerSpawner
         playerInformation.Spawned += node => Fast.CreateForgetGDTaskWithFrameDelay(async () =>
         {
             Print($"Spawning player: {node}");
+            playerInformation.IdToPlayer[long.Parse(node.Name)] = (Player)node;
             // Do player init here
             if (node is Player player)
             {
                 player.PlayerCharacter.CharacterBody2D.GlobalPosition = mapView.SpawnPoint.GlobalPosition;
-                player.PlayerCharacter.PlayerMovableChecker = new(chatBoxView);
+                player.PlayerCharacter.PlayerMovableChecker = new ActualPlayerMovableChecker(chatBoxView);
             }
         });
     }

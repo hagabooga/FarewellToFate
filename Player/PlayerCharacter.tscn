@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dattw47dcemy8"]
+[gd_scene load_steps=5 format=3 uid="uid://dattw47dcemy8"]
 
 [ext_resource type="Script" path="res://Player/PlayerCharacter.cs" id="1_1rlqy"]
 [ext_resource type="SpriteFrames" uid="uid://ciu5rbdxmpkwj" path="res://Player/PlayerCharacterSpriteFrames.tres" id="2_nmvga"]
+[ext_resource type="Theme" uid="uid://cpjvfi6lb87hv" path="res://Theme.tres" id="3_r5h3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7votj"]
 size = Vector2(10, 10.75)
@@ -28,3 +29,35 @@ frame_progress = 0.462331
 shape = SubResource("RectangleShape2D_7votj")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="NameTagControl" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 9.0
+offset_bottom = 41.0
+theme = ExtResource("3_r5h3q")
+
+[node name="NameTagPanel" type="Panel" parent="CharacterBody2D/NameTagControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.5
+offset_right = 18.5
+offset_bottom = 6.0
+grow_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="NameTagLabel" type="Label" parent="CharacterBody2D/NameTagControl/NameTagPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 4
+text = "hagabooga"
+horizontal_alignment = 1
+vertical_alignment = 1

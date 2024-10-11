@@ -1,6 +1,7 @@
+using System.Diagnostics;
 using Godot;
 using Godot.Collections;
-
+using static Godot.GD;
 namespace FarewellToFate;
 
 public partial class PlayerInformationBase : Node, IPlayerInformation
@@ -13,7 +14,7 @@ public partial class PlayerInformationBase : Node, IPlayerInformation
         remove => PlayerSpawner.Spawned -= value;
     }
 
-    [Export] public Dictionary<long, Player> IdToPlayer { get; protected set; } = null;
+    [Export] public Dictionary<long, Player> IdToPlayer { get; protected set; } = [];
 
     public MultiplayerSpawner PlayerSpawner { get; private set; } = new();
 
@@ -37,6 +38,18 @@ public partial class PlayerInformationBase : Node, IPlayerInformation
     [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
     public void ReceiveUsername(string username)
     {
-        IdToPlayer[Multiplayer.GetRemoteSenderId()].Username = username;
+        var id = Multiplayer.GetRemoteSenderId();
+        IdToPlayer[id].Username = username;
+        if (IsMultiplayerAuthority())
+        {
+            Print($"I am the server. Sending username {id} / {username} to all clients.");
+            this.RpcClients(nameof(ReceiveUsername), id, username);
+        }
+    }
+
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void ReceiveUsername(long id, string username)
+    {
+        IdToPlayer[id].Username = username;
     }
 }

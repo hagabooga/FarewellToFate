@@ -27,6 +27,8 @@ public partial class Player : ExplicitNode
 		{
 			Print($"{Multiplayer?.GetUniqueId()}: Setting Id({Id}).Username to " + value);
 			username = value;
+			PlayerCharacter.SetNameTag(username);
+			Print($"PlayerCharacter:  {PlayerCharacter.NameTagLabel.Text}");
 		}
 	}
 

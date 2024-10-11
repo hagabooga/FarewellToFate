@@ -2,13 +2,13 @@ using System.Collections.Generic;
 
 namespace FarewellToFate;
 
-public class PlayerMovableChecker
+public class ActualPlayerMovableChecker : IPlayerMovableChecker
 {
-    readonly List<bool> moves = new List<bool>();
+    readonly List<bool> moves = [];
 
     public bool IsPlayerMovable => moves.Count == 0 || moves.TrueForAll(x => x);
 
-    public PlayerMovableChecker(IChatBoxView chatBoxView)
+    public ActualPlayerMovableChecker(IChatBoxView chatBoxView)
     {
         chatBoxView.FocusedEntered += () => moves.Add(false);
         chatBoxView.FocusedExited += () => moves.Remove(false);

@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http.Headers;
+using Fractural.Tasks;
 using Godot;
 using static Godot.GD;
 
@@ -23,8 +24,10 @@ public partial class PlayerCharacter : ExplicitNode
 	[ExplicitChild] public AnimatedSprite2D CharacterSprite { get; }
 	[ExplicitChild] public CollisionShape2D CollisionShape2D { get; }
 	[ExplicitChild] public Camera2D Camera2D { get; }
+	[ExplicitChild] public Panel NameTagPanel { get; }
+	[ExplicitChild] public Label NameTagLabel { get; }
 
-	public PlayerMovableChecker PlayerMovableChecker { get; set; }
+	public IPlayerMovableChecker PlayerMovableChecker { get; set; } = new AlwaysPlayerMovableChecker();
 
 	public Vector2 MoveDirection { get; private set; } = Vector2.Zero;
 
@@ -89,5 +92,15 @@ public partial class PlayerCharacter : ExplicitNode
 			CharacterBody2D.Velocity = MoveDirection.Normalized() * totalMoveSpeed;
 		}
 		CharacterBody2D.MoveAndSlide();
+	}
+
+	public void SetNameTag(string name)
+	{
+		Fast.CreateForgetGDTask(async () =>
+		{
+			NameTagLabel.Text = name;
+			NameTagPanel.Size = new Vector2(name.Length * 4, 6);
+			NameTagPanel.Position = new(NameTagPanel.Size.X / -2, 0);
+		});
 	}
 }
